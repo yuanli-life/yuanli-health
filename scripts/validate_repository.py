@@ -15,10 +15,12 @@ REQUIRED_FILES = [
     "evaluations/golden-journeys.yaml",
 ]
 
-CAPABILITIES = ["recover", "adapt", "energize", "move", "think", "connect"]
+HUMAN_FUNCTIONAL_CAPACITIES = ["recover", "adapt", "energize", "move", "think", "connect"]
 INTENTS = ["today_capacity", "key_moment", "body_signal", "life_disruption", "long_game"]
 MODES = ["performance_first", "healthspan_first", "coupled"]
 GOLDEN_JOURNEYS = [f"GJ0{i}_" for i in range(1, 9)]
+DOMAIN_IDS = [f"H{i:02d}" for i in range(1, 13)]
+CONTEXT_IDS = [f"C{i:02d}" for i in range(1, 5)]
 
 
 def read(root: Path, rel: str) -> str:
@@ -57,17 +59,32 @@ def validate_repository(root: Path) -> list[str]:
     ]:
         require(constitution, token, "constitution/YHOS-F0.1.md", errors)
 
-    require(systems, "architecture: one_kernel_two_engines_one_learning_system", "systems/dual-system-registry.yaml", errors)
-    require(systems, "id: performance", "systems/dual-system-registry.yaml", errors)
-    require(systems, "id: healthspan", "systems/dual-system-registry.yaml", errors)
-    require(systems, "id: one_reality_learning_system", "systems/dual-system-registry.yaml", errors)
+    for token in [
+        "architecture: one_kernel_two_engines_one_learning_system",
+        "id: performance",
+        "id: healthspan",
+        "id: one_reality_learning_system",
+        "twelve_domains_are_shared_not_healthspan_exclusive: true",
+        "human_functional_capacities_are_not_fhp2_runtime_capabilities: true",
+    ]:
+        require(systems, token, "systems/dual-system-registry.yaml", errors)
 
-    for capability in CAPABILITIES:
+    require(ontology, "canonical_collective_name: Six Human Functional Capacities", "ontology/registry.yaml", errors)
+    require(ontology, "ownership: shared_scientific_backbone", "ontology/registry.yaml", errors)
+    require(ontology, "sha: 7b8d45489317d700a9b597c2464ac2c445323905", "ontology/registry.yaml", errors)
+
+    for capability in HUMAN_FUNCTIONAL_CAPACITIES:
         require(ontology, f"id: {capability}", "ontology/registry.yaml", errors)
+    for domain_id in DOMAIN_IDS:
+        require(ontology, f"id: {domain_id}", "ontology/registry.yaml", errors)
+    for context_id in CONTEXT_IDS:
+        require(ontology, f"id: {context_id}", "ontology/registry.yaml", errors)
+
     require(ontology, "expected_count: 12", "ontology/registry.yaml", errors)
     require(ontology, "expected_count: 4", "ontology/registry.yaml", errors)
     require(ontology, "expected_count: 5", "ontology/registry.yaml", errors)
-    require(ontology, "upstream_exact_id_import_pending", "ontology/registry.yaml", errors)
+    require(ontology, "source_has_machine_ids: false", "ontology/registry.yaml", errors)
+    require(ontology, "local_reference_ids_are_non_authoritative: true", "ontology/registry.yaml", errors)
 
     for intent in INTENTS:
         require(intents, f"id: {intent}", "intents/registry.yaml", errors)
