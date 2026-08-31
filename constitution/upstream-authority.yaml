@@ -14,6 +14,7 @@ precedence:
   - id: yuanli_health_domain_constitution_v1
     repository: moonstachain/yuanli-health-apple
     path: docs/domain-os/YUANLI-HEALTH-CONSTITUTION-v1.md
+    source_sha: 0d4e17f9223b1d035818547447041e108b2a4d6f
     role: health_domain_constitution
     authority: health_domain_highest
     may_define:
@@ -28,7 +29,8 @@ precedence:
   - id: fhp2_strategic_charter_v2
     repository: moonstachain/yuanli-health-apple
     path: docs/fhp/FHP2-STRATEGIC-CHARTER-v2.md
-    role: founder_product_architecture
+    source_sha: 7baf5524c7b54e22c4bd0e6012226f6c8601a6e5
+    role: founder_product_strategy
     authority: subordinate_product_strategy
     may_define:
       - today_projection
@@ -36,7 +38,22 @@ precedence:
       - founder_context_projection
       - role_projection
       - founder_product_runtime_constraints
+      - six_product_runtime_capabilities
     may_not_be_overridden_by_yhos: true
+
+identity_sources:
+  - id: fhp2_product_architecture_v1
+    repository: moonstachain/yuanli-health-apple
+    path: apps/FHP2FounderHealthWeb/docs/product/FHP2-Founder-Health-Whole-System-Product-Architecture.md
+    source_sha: 7b8d45489317d700a9b597c2464ac2c445323905
+    role: frozen_founder_product_identity_source
+    supplies:
+      - H01-H12_exact_domain_ids_and_names
+      - C01-C04_exact_context_ids_and_names
+      - five_canonical_collaboration_role_labels
+    note: >-
+      This source supplies exact frozen product identities. It does not outrank
+      the Health Domain Constitution or FHP2 Strategic Charter.
 
   - id: yhos_f0_1
     repository: yuanli-life/yuanli-health
@@ -46,6 +63,7 @@ precedence:
     may_define:
       - performance_healthspan_dual_system_invocation
       - founder_intent_vocabulary
+      - human_functional_capacity_projection
       - public_router_contracts
       - founder_facing_output_contracts
       - public_capability_federation
@@ -55,6 +73,7 @@ precedence:
       - clinical_authority
       - private_principal_health_reality
       - upstream_soul_law
+      - replacement_ids_for_upstream_domains_contexts_or_roles
 
 conflict_resolution:
   rule: highest_precedence_wins
@@ -68,3 +87,5 @@ hard_invariants:
   no_clinical_authority_from_ai_or_ui: true
   no_real_health_data_in_public_git: true
   no_skill_implementation_copy: true
+  two_engines_one_shared_scientific_backbone: true
+  human_functional_capacities_not_fhp2_runtime_capabilities: true
