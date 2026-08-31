@@ -10,10 +10,12 @@ Target architecture:
 
 - Performance Engine → Deployable Capacity
 - Healthspan Engine → Sustainable Healthspan
-- Shared Health Kernel → Principal / Evidence / Context / Clock / Authority / Longitudinal Memory
+- Shared Health Kernel → Principal / Evidence / Context / Clock / Authority / Longitudinal Memory / shared scientific backbone
 - One Learning System → `CTX → EVD → DEC → WPK → ACT → OUT → LRN → REUSED`
 
 This repository is **not** a clinical authority, personal health datastore, second Health Domain Constitution, or replacement for upstream Health Canon.
+
+The twelve FHP2 Health Domains are a **shared scientific completeness backbone** callable by both Engines. Healthspan owns the longitudinal completeness scan responsibility; it does not own the Domains as a separate truth system.
 
 ---
 
@@ -29,7 +31,7 @@ Before answering or orchestrating a Yuanli Health task, read in this order:
 6. `routing/dual-system-router.yaml`
 7. task-relevant contracts / evaluations when present
 
-If a referenced upstream identity is marked `*_pending`, do not invent its canonical name or semantics. Preserve the gap and stop any action that requires exact authority resolution.
+Use the pinned upstream identities in `ontology/registry.yaml`. Do not silently rename H01–H12, C01–C04, or the five canonical collaboration-role labels.
 
 ---
 
@@ -41,8 +43,8 @@ For every founder health request:
 1. Parse Founder Intent
 2. Resolve Principal Purpose / life context
 3. Select mode: performance_first / healthspan_first / coupled
-4. Route relevant Functional Capabilities
-5. Route relevant Health Domains
+4. Route relevant Human Functional Capacities
+5. Route relevant shared Health Domains
 6. Resolve Health Clock
 7. Gather available Evidence with provenance
 8. Preserve missing / stale / conflicting / incomparable evidence
@@ -129,13 +131,13 @@ Fail closed when critical evidence, authority, identity scope, or safety is unre
 
 Use when the Founder Intent concerns today, a near-term key moment, current readiness, recovery, adaptation, or deployable capacity.
 
-Always run a Healthspan safety guardrail.
+Always run a Healthspan safety guardrail and route into shared Health Domains when evidence/context requires scientific interpretation.
 
 ### Healthspan-first
 
 Use when the Intent concerns abnormal findings, screening/follow-up debt, unresolved risk, long-term reserve, clinical evidence, or long-game governance.
 
-Project relevant impact into current Capacity when useful.
+Run the twelve-domain completeness scan when appropriate and project relevant impact into current Capacity when useful.
 
 ### Coupled
 
@@ -153,9 +155,9 @@ Safety
 
 ---
 
-## 6. Capability and Domain identity
+## 6. Human Functional Capacity and Domain identity
 
-Six Functional Capabilities:
+Six **Human Functional Capacities**:
 
 - Recover
 - Adapt
@@ -166,7 +168,9 @@ Six Functional Capabilities:
 
 They are **functional projections**, not Health Domains.
 
-The twelve FHP2 Health Domains remain the scientific completeness backbone. Until exact upstream IDs/names are imported and pinned, do not invent or rename them in machine contracts.
+Do not call them generically “the six FHP2 capabilities”. FHP2 Strategic Charter v2 already uses a different set of six product runtime capabilities: Evidence Vault, Truth Compiler, Battle Engine, Intent Gateway, Outcome Ledger and Settlement Engine.
+
+The twelve FHP2 Health Domains remain the shared scientific completeness backbone and retain upstream identities H01–H12. Both Engines may route into them.
 
 Founder Intents are invocation vocabulary, not ontology.
 
