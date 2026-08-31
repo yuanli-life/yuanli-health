@@ -6,8 +6,8 @@ pipeline:
   - parse_natural_language_intent
   - resolve_principal_purpose_and_context
   - select_system_mode
-  - route_functional_capabilities
-  - route_health_domains
+  - route_human_functional_capacities
+  - route_shared_health_domains
   - resolve_health_clock
   - gather_required_evidence
   - check_evidence_quality_and_unknowns
@@ -31,6 +31,13 @@ system_modes:
     primary: [performance, healthspan]
     arbitration_required: true
 
+shared_scientific_backbone:
+  id: twelve_health_domains
+  callable_by: [performance, healthspan]
+  healthspan_responsibility: longitudinal_completeness_scan
+  performance_responsibility: route_domains_required_by_intent_context_and_evidence
+  domain_truth_is_shared: true
+
 arbitration:
   priority_order:
     - safety
@@ -46,28 +53,29 @@ arbitration:
 intent_defaults:
   today_capacity:
     mode: performance_first
-    capabilities: [recover, adapt, energize, move, think, connect]
+    human_functional_capacities: [recover, adapt, energize, move, think, connect]
     domain_route: dynamic_by_evidence
 
   key_moment:
     mode: performance_first
-    capability_route: dynamic_by_context
+    human_functional_capacity_route: dynamic_by_context
     domain_route: dynamic_by_evidence
 
   body_signal:
     mode: healthspan_first
     domain_route: completeness_plus_signal_specific
+    performance_projection: impact_on_human_functional_capacities_when_supported
     clinical_gate_check: required
 
   life_disruption:
     mode: coupled
-    capability_route: dynamic_by_disruption
+    human_functional_capacity_route: dynamic_by_disruption
     domain_route: dynamic_by_evidence
 
   long_game:
     mode: healthspan_first
     domain_route: twelve_domain_completeness_scan
-    capacity_projection: required
+    human_functional_capacity_projection: required
 
 founder_contract:
   fields:
