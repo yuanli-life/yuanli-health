@@ -14,8 +14,13 @@ shared_kernel:
     - life_context
     - health_clock
     - authority
+    - scientific_domain_backbone_reference
     - decision_trace
     - learning_trace
+  shared_scientific_backbone:
+    id: twelve_health_domains
+    source: fhp2_product_architecture
+    callable_by: [performance, healthspan]
   does_not_own:
     - clinical_authority
     - private_reality_in_public_git
@@ -28,12 +33,10 @@ engines:
     founder_language: 身体余量
     primary_horizons: [now, daily, weekly]
     functional_projection:
-      - recover
-      - adapt
-      - energize
-      - move
-      - think
-      - connect
+      canonical_name: Six Human Functional Capacities
+      items: [recover, adapt, energize, move, think, connect]
+    uses_scientific_backbone: twelve_health_domains
+    scientific_routing: dynamic_by_intent_context_evidence
     guardrail_engine: healthspan
     rule: performance_cannot_override_healthspan_safety
 
@@ -42,7 +45,8 @@ engines:
     objective: sustainable_healthspan
     founder_language: 长期余地
     primary_horizons: [experimental, clinical, longitudinal]
-    scientific_backbone: twelve_health_domains
+    uses_scientific_backbone: twelve_health_domains
+    completeness_scan_owner: true
     responsibilities:
       - long_term_risk
       - screening_and_followup_debt
@@ -76,3 +80,9 @@ cross_system:
     - deployable_capacity
     - general_optimization
   target_milestone: FIRST_CROSS_SYSTEM_HEALTH_REUSE
+
+identity_guardrails:
+  two_engines_are_not_two_kernels: true
+  two_engines_do_not_own_separate_truth: true
+  twelve_domains_are_shared_not_healthspan_exclusive: true
+  human_functional_capacities_are_not_fhp2_runtime_capabilities: true
