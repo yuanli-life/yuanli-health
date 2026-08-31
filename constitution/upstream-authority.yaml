@@ -1,0 +1,70 @@
+schema: yhos_upstream_authority/v1
+status: proposed
+repository: yuanli-life/yuanli-health
+
+precedence:
+  - id: yuanli_strategy_soul
+    role: upstream_law
+    authority: highest_upstream
+    may_define:
+      - yuanli_strategy_law
+      - cross_domain_authority_principles
+    may_not_be_overridden_by_yhos: true
+
+  - id: yuanli_health_domain_constitution_v1
+    repository: moonstachain/yuanli-health-apple
+    path: docs/domain-os/YUANLI-HEALTH-CONSTITUTION-v1.md
+    role: health_domain_constitution
+    authority: health_domain_highest
+    may_define:
+      - health_optionality
+      - health_domain_truth_discipline
+      - health_clock_discipline
+      - clinical_authority_boundary
+      - golden_loop
+      - privacy_boundary
+    may_not_be_overridden_by_yhos: true
+
+  - id: fhp2_strategic_charter_v2
+    repository: moonstachain/yuanli-health-apple
+    path: docs/fhp/FHP2-STRATEGIC-CHARTER-v2.md
+    role: founder_product_architecture
+    authority: subordinate_product_strategy
+    may_define:
+      - today_projection
+      - twelve_domain_product_projection
+      - founder_context_projection
+      - role_projection
+      - founder_product_runtime_constraints
+    may_not_be_overridden_by_yhos: true
+
+  - id: yhos_f0_1
+    repository: yuanli-life/yuanli-health
+    path: constitution/YHOS-F0.1.md
+    role: public_founder_dual_system_orchestration_constitution
+    authority: subordinate_public_product_constitution
+    may_define:
+      - performance_healthspan_dual_system_invocation
+      - founder_intent_vocabulary
+      - public_router_contracts
+      - founder_facing_output_contracts
+      - public_capability_federation
+    may_not_define:
+      - second_health_domain_constitution
+      - second_health_truth
+      - clinical_authority
+      - private_principal_health_reality
+      - upstream_soul_law
+
+conflict_resolution:
+  rule: highest_precedence_wins
+  fail_mode: fail_closed
+  require_human_review_on_ambiguity: true
+
+hard_invariants:
+  no_parallel_health_constitution: true
+  no_parallel_health_truth: true
+  no_fifth_canon: true
+  no_clinical_authority_from_ai_or_ui: true
+  no_real_health_data_in_public_git: true
+  no_skill_implementation_copy: true
