@@ -57,13 +57,13 @@ Health Optionality 不是健康总分，不是寿命预测，不是 Performance 
      Deployable Capacity               Sustainable Healthspan
         今日可调用能力                     长期生命底盘
               │                                   │
-      6 Functional Capabilities            12 Health Domains
+   6 Human Functional Capacities     Longitudinal Completeness Scan
               │                                   │
               └─────────────────┬─────────────────┘
                                 │
                          SHARED HEALTH KERNEL
-        Principal / Purpose / Evidence / Context / Clock /
-             Authority / Longitudinal Memory / Learning
+       Principal / Purpose / Evidence / Context / Clock /
+       Authority / Longitudinal Memory / 12 Health Domains
                                 │
                      ONE REALITY LEARNING SYSTEM
         CTX → EVD → DEC → WPK → ACT → OUT → LRN → REUSED
@@ -71,9 +71,11 @@ Health Optionality 不是健康总分，不是寿命预测，不是 Performance 
 
 ### 2.1 One Kernel
 
-双系统共享同一个 Principal、同一 Evidence 链、同一纵向记忆、同一 Authority、同一 Health Clock 纪律与同一现实学习链。
+双系统共享同一个 Principal、同一 Evidence 链、同一纵向记忆、同一 Authority、同一 Health Clock 纪律、同一 12 Health Domains Scientific Backbone 与同一现实学习链。
 
 **Two Engines, One Truth.**
+
+两个 Engine 是同一 Kernel 上的两种受治理判断与调用模式，不是两颗 Kernel、两套 Canon、两套健康真相或两套个人档案。
 
 任何 Surface、Agent、Skill、Performance 判断或 Healthspan 判断都不得建立第二套关于同一 Principal 的正式健康真相。
 
@@ -83,7 +85,7 @@ Performance Engine 负责短周期的 **Deployable Capacity｜今日可调用能
 
 > 今天与眼前重要人生情境中，这个人还能安全调用多少身体、认知、恢复、应变与心理能力？
 
-其六大功能投影：
+其六大**生命功能能力｜Human Functional Capacities**：
 
 - `Recover`｜恢复
 - `Adapt`｜应变
@@ -92,7 +94,11 @@ Performance Engine 负责短周期的 **Deployable Capacity｜今日可调用能
 - `Think`｜认知表现
 - `Connect`｜心理与意义
 
-六能力是 Functional Projection，不是第二套 Health Ontology，不是六个医学领域，也不是六条独立产品线。
+这六项是 Functional Projection，不是第二套 Health Ontology，不是六个医学领域，也不是六条独立产品线。
+
+**命名硬规则：不得把它们泛称为“FHP2 六项能力”。** FHP2 Strategic Charter v2 已经使用另一组“六项产品运行能力”：Evidence Vault、Truth Compiler、Battle Engine、Intent Gateway、Outcome Ledger、Settlement Engine。二者法权身份完全不同。
+
+Performance Engine 可按 Intent / Context / Evidence 路由进入共享 12 Health Domains；它不拥有独立科学本体。
 
 ### 2.3 Healthspan Engine
 
@@ -100,7 +106,16 @@ Healthspan Engine 负责 **Sustainable Healthspan｜长期生命底盘**，主�
 
 > 哪些身体结构、疾病风险、功能储备、筛查债务与未闭环问题，正在影响未来十年、二十年的重要人生选择？
 
-其专业完整性由上游 FHP2 的 12 Health Domains 保证。12 Domains 是 Scientific Completeness Backbone，不是用户入口，不要求同步建设十二条产品线。
+FHP2 的 12 Health Domains 是**Shared Scientific Completeness Backbone｜共享科学完整性骨架**，两个 Engine 都可调用。
+
+Healthspan Engine 的特殊责任不是“拥有 12 Domains”，而是：
+
+- 对 12 Domains 进行长期 completeness scan；
+- 发现 silent risk、screening debt、follow-up debt 与 unresolved risk；
+- 在 Clinical / Longitudinal Clock 下维护长期风险与能力底盘；
+- 将与当前能力相关的长期结论投影回 Performance。
+
+12 Domains 不是用户入口，不要求同步建设十二条产品线。
 
 ### 2.4 One Learning System
 
@@ -142,7 +157,7 @@ Safety
 
 ### 3.3 Cross-System Learning
 
-Performance 的真实 Outcome 可以形成 Healthspan 的长期能力学习；Healthspan 的临床/长期 Learning 也可以改变未来 Performance 决策。
+Performance 的真实 Outcome 可以形成未来 Healthspan 决策可用的 Learning；Healthspan 的临床/长期 Learning 也可以改变未来 Performance 决策。
 
 跨系统复用必须留下可追溯 `reuse receipt`，不得以“两个系统都引用过同一条数据”冒充复用。
 
@@ -177,31 +192,26 @@ Intent 的法权身份：**Invocation Layer only**。
 ## 5. Shared Kernel 六个正交平面
 
 ### P1 Purpose
-
 回答：本人最终想保护什么？
 
 最低对象：Principal purpose / priorities / constraints / sovereignty boundary。
 
 ### P2 Intent
-
 回答：本人此刻真正想解决什么？
 
 只用于调用和路由。
 
-### P3 Capacity
+### P3 Human Functional Capacity
+回答：人的哪种可调用生命功能能力受到影响？
 
-回答：人的哪种可调用能力受到影响？
-
-使用六大 Functional Capabilities。
+使用 Recover / Adapt / Energize / Move / Think / Connect。
 
 ### P4 Domain
-
 回答：专业上涉及哪些健康问题？
 
-使用上游 12 Health Domains，承担 completeness coverage。
+使用上游 H01–H12 共享 Health Domains，承担科学完整性与专业解释；两个 Engine 都可调用。
 
 ### P5 Context × Clock
-
 回答：在什么现实情境与时间尺度下判断？
 
 - Founder Context 负责现实调制；
@@ -209,7 +219,6 @@ Intent 的法权身份：**Invocation Layer only**。
 - 短周期信号不得静默覆盖长周期结论。
 
 ### P6 Evidence × Authority
-
 回答：凭什么知道？谁有资格决定？
 
 必须显式区分 Evidence provenance、Scientific truth、Personal truth、Clinical truth 与相应 Authority。
@@ -386,9 +395,9 @@ Gold = Scientific PASS × Principal PASS × Reality PASS
 
 ### I2｜Founder Intent is invocation, not ontology.
 
-### I3｜Six Capabilities are functional projections, not Health Domains.
+### I3｜Six Human Functional Capacities are functional projections, not Health Domains and not FHP2 runtime capabilities.
 
-### I4｜Twelve Domains remain the scientific completeness backbone.
+### I4｜Twelve Domains remain the shared scientific completeness backbone; neither Engine owns a separate Domain truth.
 
 ### I5｜Context and Clock modify judgment; they do not create truth.
 
@@ -430,9 +439,9 @@ Registered
 本候选宪法只有同时满足以下条件才可从 `proposed` 转为 `active`：
 
 1. Human adversarial review 完成；
-2. 上游法权引用经实时核验；
+2. 上游法权引用经实时核验并 pin；
 3. 不存在第二 Health Constitution / 第二 Health truth / 第二 Clinical Authority；
-4. 双系统与 6 Capabilities / 12 Domains / Context / Clock / Roles 的身份不冲突；
+4. 双系统与 Six Human Functional Capacities / H01–H12 / C01–C04 / Health Clock / 五角色的身份不冲突；
 5. Golden Journey 预注册完成；
 6. Public privacy scan 与结构 validator 通过；
 7. 受治理合并进入 protected `main`；
