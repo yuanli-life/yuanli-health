@@ -1,0 +1,31 @@
+name: Validate YHOS F0.1 Candidate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [yhos-f0-1-constitution-candidate]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run repository contract tests
+        run: python -m unittest tests/test_repository_contract.py
+
+      - name: Run structural validator
+        run: python scripts/validate_repository.py
+
+      - name: Run public privacy scanner
+        run: python scripts/scan_public_content.py
