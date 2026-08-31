@@ -1,0 +1,58 @@
+schema: yhos_architecture_mapping/v1
+status: proposed
+principle: orthogonal_dimensions_one_health_reality
+
+relations:
+  intent_to_system:
+    allowed_relation_types: [primary, secondary_guardrail, coupled]
+  intent_to_capability:
+    allowed_relation_types: [primary, secondary, conditional, unknown]
+  capability_to_domain:
+    allowed_relation_types: [primary, secondary, conditional, contraindicated, unknown]
+    note: population_relation_does_not_equal_personal_truth
+  context_to_capability_demand:
+    allowed_relation_types: [raises_demand, lowers_demand, conditional, unknown]
+  domain_to_clock:
+    allowed_relation_types: [primary, secondary, conditional]
+  role_to_authority:
+    allowed_relation_types: [observe, compile, propose, authorize, clinically_adjudicate, execute, settle]
+  learning_to_future_task:
+    allowed_relation_types: [eligible, ineligible, contraindicated, context_dependent]
+
+identity_rules:
+  founder_intent_is_not_domain: true
+  capability_is_not_domain: true
+  domain_is_not_surface: true
+  context_is_not_truth: true
+  clock_is_not_truth: true
+  evidence_is_not_authority: true
+  surface_is_not_authority: true
+  skill_is_not_canon: true
+
+anti_false_precision:
+  numeric_weights_allowed_at_f0_1: false
+  reason: >-
+    F0.1 freezes identity and routing semantics only. Quantitative weights require
+    explicit scientific and/or personal evidence qualification and must not be
+    invented for architectural convenience.
+
+personalization_future_contract:
+  population_edges:
+    may_capture:
+      - relationship_type
+      - evidence_strength
+      - direction
+      - time_horizon
+      - confidence
+  personal_edges:
+    require:
+      - principal_private_runtime
+      - observed_outcome
+      - adjudicated_learning
+    may_capture:
+      - context
+      - clock
+      - n_observations
+      - contradictions
+      - last_verified
+  public_repo_may_store_real_personal_edges: false
