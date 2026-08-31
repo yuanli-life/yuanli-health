@@ -10,29 +10,47 @@
 
 > **One Kernel × Two Engines × One Learning System**
 
-把 Performance 与 Healthspan 两套能力统一到同一健康现实、同一法权与同一学习系统中。
+把 Performance 与 Healthspan 两套调用模式统一到同一健康现实、同一科学骨架、同一法权与同一学习系统中。
 
 ## 双系统
 
 ### Performance Engine｜今日可调用能力
 
-围绕六大 Functional Capabilities：
+通过 **Six Human Functional Capacities｜六大生命功能能力** 形成短周期功能投影：
 
 `Recover / Adapt / Energize / Move / Think / Connect`
 
 回答：今天与眼前重要人生情境中，我还有多少能力可以安全调用？
 
+这六项不是 Health Domains，也不是 FHP2 Strategic Charter v2 中 Evidence Vault / Truth Compiler / Battle Engine / Intent Gateway / Outcome Ledger / Settlement Engine 那组“六项产品运行能力”。
+
 ### Healthspan Engine｜长期生命底盘
 
-以 FHP2 上游 12 Health Domains 作为 Scientific Completeness Backbone。
+回答：哪些身体结构、长期风险、筛查债务、功能储备与未闭环问题，正在影响未来重要人生选择？
 
-回答：哪些身体结构、长期风险、筛查债务与未闭环问题，正在影响未来重要人生选择？
+Healthspan 负责长期 **completeness scan**，但不独占专业领域。
+
+## 共享科学骨架
+
+FHP2 上游 H01–H12 是：
+
+> **Shared Scientific Completeness Backbone｜共享科学完整性骨架**
+
+Performance 与 Healthspan 都可以按 Intent / Context / Evidence 路由进入 H01–H12。
+
+因此不是：
+
+`Performance = 6能力 / Healthspan = 12领域` 两套分裂本体；
+
+而是：
+
+`Two Engines → One Shared Kernel → One H01–H12 Scientific Backbone`。
 
 ## 同一 Kernel
 
 两个 Engine 共享：
 
-`Principal / Purpose / Evidence / Context / Health Clock / Authority / Longitudinal Memory`
+`Principal / Purpose / Evidence / Context / Health Clock / Authority / Longitudinal Memory / H01–H12`
 
 硬规则：
 
@@ -50,7 +68,7 @@
 - 后天跨洲出差，怎么少透支？
 - 最近有什么该管但一直没管？
 
-AI Health Office 自动路由到 Performance、Healthspan 或 Coupled 模式。
+AI Health Office 自动路由到 Performance-first、Healthspan-first 或 Coupled 模式。
 
 ## 默认输出
 
@@ -96,8 +114,12 @@ CTX → EVD → DEC → WPK → ACT → OUT → LRN → REUSED
 
 ## 当前状态
 
-`YHOS-F0.1 CONSTITUTION CANDIDATE`
+`YHOS-F0.1 CONSTITUTION CANDIDATE / NOT_ACTIVE`
 
 候选 Constitution 见：`constitution/YHOS-F0.1.md`。
 
-在 Human adversarial review、验证、受治理合并和 Acceptance Receipt 完成之前，不得宣称 Constitution 已 active。
+Human Review 见：`governance/F0.1-HUMAN-REVIEW-CHECKLIST.md`。
+
+当前 Governance blocker 见 Issue #1：`main` 尚未 protected。
+
+在 Human Review、exact-head CI、repository governance、受治理合并和 Acceptance Receipt 完成之前，不得宣称 Constitution 已 frozen 或 active。
