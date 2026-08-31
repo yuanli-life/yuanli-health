@@ -5,12 +5,12 @@ principle: orthogonal_dimensions_one_health_reality
 relations:
   intent_to_system:
     allowed_relation_types: [primary, secondary_guardrail, coupled]
-  intent_to_capability:
+  intent_to_human_functional_capacity:
     allowed_relation_types: [primary, secondary, conditional, unknown]
-  capability_to_domain:
+  human_functional_capacity_to_domain:
     allowed_relation_types: [primary, secondary, conditional, contraindicated, unknown]
     note: population_relation_does_not_equal_personal_truth
-  context_to_capability_demand:
+  context_to_human_functional_capacity_demand:
     allowed_relation_types: [raises_demand, lowers_demand, conditional, unknown]
   domain_to_clock:
     allowed_relation_types: [primary, secondary, conditional]
@@ -21,13 +21,19 @@ relations:
 
 identity_rules:
   founder_intent_is_not_domain: true
-  capability_is_not_domain: true
+  human_functional_capacity_is_not_domain: true
+  human_functional_capacity_is_not_fhp2_runtime_capability: true
   domain_is_not_surface: true
   context_is_not_truth: true
   clock_is_not_truth: true
   evidence_is_not_authority: true
   surface_is_not_authority: true
   skill_is_not_canon: true
+
+scientific_backbone_rules:
+  h01_h12_are_shared: true
+  callable_by: [performance, healthspan]
+  healthspan_completeness_scan_does_not_equal_domain_ownership: true
 
 anti_false_precision:
   numeric_weights_allowed_at_f0_1: false
