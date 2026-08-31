@@ -1,0 +1,69 @@
+schema: yhos_ontology_registry/v1
+status: proposed
+principle: one_concept_one_identity
+
+north_star:
+  id: health_optionality
+  canonical_name: Health Optionality
+  zh: 长期生命选择权
+  authority: upstream_health_domain_constitution
+
+functional_capabilities:
+  authority: yhos_f0_1_functional_projection
+  ontology_status: projection_not_domain
+  items:
+    - {id: recover, canonical_name: Recover, zh: 恢复}
+    - {id: adapt, canonical_name: Adapt, zh: 应变}
+    - {id: energize, canonical_name: Energize, zh: 供能}
+    - {id: move, canonical_name: Move, zh: 身体储备}
+    - {id: think, canonical_name: Think, zh: 认知表现}
+    - {id: connect, canonical_name: Connect, zh: 心理与意义}
+
+health_domains:
+  authority: fhp2_upstream
+  expected_count: 12
+  import_policy: reference_upstream_do_not_redefine
+  registry_status: upstream_exact_id_import_pending
+  note: >-
+    F0.1 deliberately does not invent or silently rename the twelve upstream
+    FHP2 domain identities. F1 must import their exact canonical IDs/names from
+    the active upstream registry/charter and pin them by source reference.
+
+founder_contexts:
+  authority: fhp2_upstream
+  expected_count: 4
+  import_policy: reference_upstream_do_not_redefine
+  registry_status: upstream_exact_id_import_pending
+
+health_clocks:
+  authority: health_domain_constitution_plus_public_projection
+  items:
+    - {id: now, zh: 即时}
+    - {id: daily, zh: 日}
+    - {id: weekly, zh: 周}
+    - {id: experimental, zh: 干预窗口}
+    - {id: clinical, zh: 临床}
+    - {id: longitudinal, zh: 长期}
+  invariant: short_clock_cannot_overwrite_long_clock
+
+roles:
+  authority: fhp2_upstream_and_health_authority_policy
+  expected_count: 5
+  import_policy: reference_upstream_do_not_redefine
+  registry_status: upstream_exact_id_import_pending
+
+truth_types:
+  items:
+    - id: scientific_truth
+      meaning: population_or_general_evidence
+    - id: personal_truth
+      meaning: principal_specific_observed_or_adjudicated_reality
+    - id: clinical_truth
+      meaning: clinically_authorized_conclusion
+
+validation:
+  reject_duplicate_ids: true
+  reject_unregistered_domain_aliases: true
+  reject_capability_as_domain: true
+  reject_intent_as_domain: true
+  reject_surface_as_truth_owner: true
