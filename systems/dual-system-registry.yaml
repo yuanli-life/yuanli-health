@@ -1,0 +1,78 @@
+schema: yhos_dual_system_registry/v1
+status: proposed
+north_star: health_optionality
+architecture: one_kernel_two_engines_one_learning_system
+
+shared_kernel:
+  id: shared_health_kernel
+  canonical_name: Shared Health Kernel
+  owns:
+    - principal_context
+    - purpose
+    - evidence_provenance
+    - longitudinal_memory
+    - life_context
+    - health_clock
+    - authority
+    - decision_trace
+    - learning_trace
+  does_not_own:
+    - clinical_authority
+    - private_reality_in_public_git
+    - independent_surface_truth
+
+engines:
+  - id: performance
+    canonical_name: Performance Engine
+    objective: deployable_capacity
+    founder_language: 身体余量
+    primary_horizons: [now, daily, weekly]
+    functional_projection:
+      - recover
+      - adapt
+      - energize
+      - move
+      - think
+      - connect
+    guardrail_engine: healthspan
+    rule: performance_cannot_override_healthspan_safety
+
+  - id: healthspan
+    canonical_name: Healthspan Engine
+    objective: sustainable_healthspan
+    founder_language: 长期余地
+    primary_horizons: [experimental, clinical, longitudinal]
+    scientific_backbone: twelve_health_domains
+    responsibilities:
+      - long_term_risk
+      - screening_and_followup_debt
+      - clinical_evidence_review
+      - unresolved_risk_closure
+      - reserve_building
+      - preventive_governance
+    projects_to_performance: true
+
+learning_system:
+  id: one_reality_learning_system
+  spine: [CTX, EVD, DEC, WPK, ACT, OUT, LRN, REUSED]
+  shared_by: [performance, healthspan]
+  constraints:
+    act_is_not_outcome: true
+    outcome_is_not_attribution: true
+    outcome_is_not_learning: true
+    learning_is_not_reuse: true
+    task2_preload_required_for_reuse: true
+    actual_task2_use_required_for_reuse: true
+
+cross_system:
+  modes:
+    - performance_first
+    - healthspan_first
+    - coupled
+  arbitration_priority:
+    - safety
+    - irreversible_long_term_risk
+    - important_life_context
+    - deployable_capacity
+    - general_optimization
+  target_milestone: FIRST_CROSS_SYSTEM_HEALTH_REUSE
