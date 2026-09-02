@@ -1,20 +1,24 @@
 # 原力健康｜Yuanli Health
 
-> **Repository bootstrap only — no active YHOS-F0.1 Constitution is installed yet.**
+> **YH2-C1 Health Constitution v0.1 installed and human-ratified.**
 
-本仓库用于建设面向企业家 Principal 的公开、可调用原力健康双系统编排层。
+本仓库用于建设面向企业家 Principal 的原力健康操作系统。
 
-当前阶段：`BOOTSTRAP_ONLY`
+当前阶段：`YH2_REALITY_CONVERGENCE`
 
-目标架构：`One Kernel × Two Engines × One Learning System`
+## Health OS 2.0
 
-- Performance Engine：保护今日可调用能力（Deployable Capacity）
-- Healthspan Engine：保护长期生命底盘（Sustainable Healthspan）
-- Shared Health Kernel：共享 Principal / Evidence / Context / Clock / Authority / Longitudinal Memory
-- One Learning System：`CTX → EVD → DEC → WPK → ACT → OUT → LRN → REUSED`
+`C1 Health Kernel → C2 Living Health State → C3 Health Priority Map → C4 Reality Loop → Body Reality → Evidence / Learning ↺`
+
+- **C1｜Health Kernel**：我为什么健康？什么不能被牺牲？
+- **C2｜Living Health State**：我的身体现在真实怎样？
+- **C3｜Health Priority Map**：现在真正值得押什么？
+- **C4｜Reality Loop**：Decision → Authorization → ACT → OUT → LRN
 
 最高目标：**Health Optionality｜长期生命选择权**。
 
+> **健康不是为了把指标优化到最好，而是为了尽可能长时间保留高质量生命选择权。**
+
 > 让身体有余量，让人生有余地。
 
-此 bootstrap 文件只用于建立默认分支起点，不构成 Constitution Freeze、Domain Canon、临床权威、真实健康数据接纳或运行时授权。
+当前 C1 正典：[`YH2-C1-HEALTH-CONSTITUTION.md`](./YH2-C1-HEALTH-CONSTITUTION.md)
