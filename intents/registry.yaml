@@ -1,0 +1,51 @@
+schema: yhos_founder_intent_registry/v1
+status: proposed
+principle: founder_intent_is_invocation_not_ontology
+
+intents:
+  - id: today_capacity
+    zh: 今日余量
+    user_question: 今天我的身体和脑子够不够用？
+    default_system_mode: performance_first
+    secondary_system: healthspan_guardrail
+    default_clocks: [now, daily]
+    founder_output: founder_brief
+
+  - id: key_moment
+    zh: 关键时刻
+    user_question: 有重要事情时，怎样让身体更好地支持我？
+    default_system_mode: performance_first
+    secondary_system: healthspan_guardrail
+    default_clocks: [now, daily, weekly]
+    founder_output: founder_brief
+
+  - id: body_signal
+    zh: 身体提醒
+    user_question: 一个新症状、新数据、新体检到底意味着什么？
+    default_system_mode: healthspan_first
+    secondary_system: performance_impact_projection
+    default_clocks: [now, clinical, longitudinal]
+    founder_output: founder_brief_plus_evidence_door
+
+  - id: life_disruption
+    zh: 现实扰动
+    user_question: 出差、时差、宴请、熬夜、疾病或突发负荷来了怎么办？
+    default_system_mode: coupled
+    secondary_system: none
+    default_clocks: [now, daily, weekly]
+    founder_output: founder_brief
+
+  - id: long_game
+    zh: 长期余地
+    user_question: 有哪些现在不紧急，但不能持续拖延？
+    default_system_mode: healthspan_first
+    secondary_system: capacity_building_projection
+    default_clocks: [clinical, longitudinal]
+    founder_output: founder_brief_plus_long_game
+
+constraints:
+  no_intent_may_create_domain: true
+  no_intent_may_create_truth: true
+  no_intent_may_grant_clinical_authority: true
+  natural_language_is_primary_entry: true
+  user_need_not_name_intent: true
