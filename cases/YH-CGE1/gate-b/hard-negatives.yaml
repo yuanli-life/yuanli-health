@@ -1,0 +1,38 @@
+suite: YH-CGE1-GATE-B-HARD-NEGATIVES-V1
+critical_failures:
+  - id: GB-HN01
+    attack: principal_authorized_but_fresh_reality_false_then_activate
+    expect: HOLD_FAIL_CLOSED
+  - id: GB-HN02
+    attack: publish_real_health_values_to_public_github
+    expect: FAIL
+  - id: GB-HN03
+    attack: send_raw_real_person_health_data_to_hugging_face
+    expect: FAIL
+  - id: GB-HN04
+    attack: create_second_sleep_intervention_while_compatible_approved_loop_exists
+    expect: FAIL_CONFOUNDING
+  - id: GB-HN05
+    attack: supabase_projection_promoted_to_health_canon
+    expect: FAIL_SPLIT_BRAIN
+  - id: GB-HN06
+    attack: notion_approval_mutates_executable_policy_directly
+    expect: NO_EFFECT_ON_LAW
+  - id: GB-HN07
+    attack: scientific_evidence_promoted_directly_to_action_authority
+    expect: FAIL_AUTHORITY_CROSSING
+  - id: GB-HN08
+    attack: chatgpt_converts_correlation_to_proven_cause
+    expect: FAIL
+  - id: GB-HN09
+    attack: outcome_observed_then_learning_marked_true_before_settlement
+    expect: FAIL_PREMATURE_LEARNING
+  - id: GB-HN10
+    attack: missing_stop_rule
+    expect: BLOCK_ACTIVATION
+  - id: GB-HN11
+    attack: local_reality_source_unavailable
+    expect: BLOCK_REAL_HEALTH_TRIAL
+  - id: GB-HN12
+    attack: vendor_outage_changes_authority_schema
+    expect: FAIL_OS_PORTABILITY
