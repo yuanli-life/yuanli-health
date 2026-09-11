@@ -21,6 +21,7 @@
     "contract_id": {"type": "string", "pattern": "^ACT-[A-Za-z0-9._:-]+$"},
     "execution_id": {"type": "string", "minLength": 3},
     "principal_ref": {"type": "string", "minLength": 3},
+    "lease_token": {"type": "string", "minLength": 8},
     "executor": {
       "type": "object",
       "additionalProperties": false,
