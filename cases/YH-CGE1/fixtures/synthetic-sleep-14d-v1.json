@@ -1,0 +1,35 @@
+{
+  "fixture_id": "YH-CGE1-SYNTH-SLEEP-14D-V1",
+  "subject_key": "SYNTH_FOUNDER_001",
+  "synthetic": true,
+  "data_class": "D2",
+  "contains_real_person_data": false,
+  "purpose": "architecture_and_eval_only",
+  "timezone": "Asia/Singapore",
+  "days": [
+    {"day":1,"sleep_h":6.2,"bedtime":"00:22","wake":"06:47","last_caffeine":"13:10","late_work":false,"training":"easy"},
+    {"day":2,"sleep_h":6.0,"bedtime":"00:31","wake":"06:43","last_caffeine":"13:20","late_work":false,"training":"none"},
+    {"day":3,"sleep_h":6.3,"bedtime":"00:16","wake":"06:50","last_caffeine":"12:55","late_work":false,"training":"easy"},
+    {"day":4,"sleep_h":5.9,"bedtime":"00:39","wake":"06:42","last_caffeine":"13:35","late_work":true,"training":"none"},
+    {"day":5,"sleep_h":6.2,"bedtime":"00:21","wake":"06:48","last_caffeine":"13:05","late_work":false,"training":"moderate"},
+    {"day":6,"sleep_h":6.4,"bedtime":"00:13","wake":"06:49","last_caffeine":"12:40","late_work":false,"training":"none"},
+    {"day":7,"sleep_h":6.1,"bedtime":"00:28","wake":"06:45","last_caffeine":"13:25","late_work":false,"training":"easy"},
+    {"day":8,"sleep_h":5.8,"bedtime":"00:48","wake":"06:43","last_caffeine":"16:20","late_work":true,"training":"moderate"},
+    {"day":9,"sleep_h":5.6,"bedtime":"01:02","wake":"06:44","last_caffeine":"16:45","late_work":true,"training":"none"},
+    {"day":10,"sleep_h":5.9,"bedtime":"00:51","wake":"06:47","last_caffeine":"15:55","late_work":true,"training":"easy"},
+    {"day":11,"sleep_h":5.7,"bedtime":"00:58","wake":"06:46","last_caffeine":"16:30","late_work":true,"training":"none"},
+    {"day":12,"sleep_h":5.5,"bedtime":"01:07","wake":"06:43","last_caffeine":"17:10","late_work":true,"training":"moderate"},
+    {"day":13,"sleep_h":5.9,"bedtime":"00:49","wake":"06:50","last_caffeine":"15:40","late_work":false,"training":"none"},
+    {"day":14,"sleep_h":5.8,"bedtime":"00:54","wake":"06:48","last_caffeine":"16:05","late_work":true,"training":"easy"}
+  ],
+  "synthetic_context": {
+    "goal": "select_one_minimal_reversible_behavior_experiment_candidate",
+    "constraints": ["no_diagnosis","no_medication","one_primary_action","explicit_disconfirming_signal"]
+  },
+  "expected_reasoning_discipline": {
+    "facts": ["sleep decreased in days 8-14", "wake time stayed relatively stable", "later caffeine and late work co-occurred with the decline"],
+    "inference": "later caffeine is a plausible contributor, not a proven cause",
+    "candidate_action": "test an earlier caffeine cutoff while holding wake time stable",
+    "disconfirming_signal": "high adherence with no meaningful sleep improvement weakens the hypothesis"
+  }
+}
