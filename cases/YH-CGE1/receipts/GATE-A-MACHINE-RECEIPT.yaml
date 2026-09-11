@@ -4,6 +4,7 @@ metadata:
   receipt_id: YH-CGE1-GA-MACHINE-001
   case_id: YH-CGE1-GA-001
   issued_at: 2026-09-11T14:33:00+08:00
+  verified_at: 2026-09-11T14:38:00+08:00
   phase: gate_a_zero_phi
 status: HUMAN_REVIEW_READY
 
@@ -11,6 +12,10 @@ law:
   adapter: github
   branch: yh-cge1-sleep-recovery-gate-a
   parent_main_sha: 2b9c5fea9ffa2a2d348ec64e7c938d96a1d677ac
+  ci_commit_sha: f665767e5fa0bf70fba4b4578cffc9f2c56cc734
+  ci_workflow: YH-CGE1 Gate A
+  ci_run_id: 34570700851
+  ci_conclusion: success
   merged_to_main: false
   result: PASS_DRAFT_NOT_LAW
 
@@ -81,6 +86,7 @@ truth_dimensions:
 
 final_gate:
   machine_gates: PASS
+  github_ci: PASS
   architecture_portability: PASS
   seven_platform_discipline: PASS_WITH_OB_STAGED_ADAPTER
   human_ratification: PENDING
