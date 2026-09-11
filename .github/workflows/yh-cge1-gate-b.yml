@@ -1,0 +1,42 @@
+name: YH-CGE1 Gate B
+on:
+  pull_request:
+    paths:
+      - 'cases/YH-CGE1/gate-b/**'
+      - '.github/workflows/yh-cge1-gate-b.yml'
+  push:
+    branches:
+      - 'yh-cge1-gate-b-n1-sleep'
+    paths:
+      - 'cases/YH-CGE1/gate-b/**'
+      - '.github/workflows/yh-cge1-gate-b.yml'
+jobs:
+  gate-b-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Gate B law invariants
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('cases/YH-CGE1/gate-b/protocol.yaml').read_text()
+          h = Path('cases/YH-CGE1/gate-b/hard-negatives.yaml').read_text()
+          required = [
+              'status: AUTHORIZED_HOLD_FRESHNESS',
+              'canonical_source: LocalHealthKernel',
+              'raw_health_data_public_cloud: deny',
+              'duplicate_sleep_intervention: deny',
+              'real_person_raw_health_input: deny',
+              'diagnosis_or_prescription: deny',
+              'one_primary_reversible_action: true',
+              'stop_rule_required: true',
+              'on_failure: HOLD_FAIL_CLOSED',
+          ]
+          missing = [x for x in required if x not in p]
+          assert not missing, f'Missing Gate B invariants: {missing}'
+          for i in range(1, 13):
+              assert f'GB-HN{i:02d}' in h, f'Missing hard negative GB-HN{i:02d}'
+          assert 'publish_real_health_values_to_public_github' in h
+          assert 'send_raw_real_person_health_data_to_hugging_face' in h
+          print('YH-CGE1 Gate B contract: PASS')
+          PY
