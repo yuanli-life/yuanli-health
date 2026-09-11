@@ -1,0 +1,21 @@
+apiVersion: yuanli.health/v1
+kind: GateAdmissionStatus
+metadata:
+  id: YH-CGE1-GATE-B-ADMISSION
+principal_authorization: PASS
+gate_a_canon_settlement: PASS
+fresh_local_reality: FAIL_CLOSED
+provenance: AVAILABLE_BUT_STALE
+parallel_intervention_check: PRIVATE_RECONCILIATION_REQUIRED
+public_health_data_exposure: NONE
+state: AUTHORIZED_HOLD_FRESHNESS
+next_transition: GATE_B_ACTIVE_REALITY_TRIAL
+transition_requires:
+  - fresh_local_reality
+  - provenance_complete
+  - nonconflicted_reconciliation
+  - compatible_private_runtime_binding
+  - stop_rule_present
+note: >-
+  Public repository intentionally records only gate state and policy.
+  Real-person health values and private runtime identifiers remain outside public GitHub.
