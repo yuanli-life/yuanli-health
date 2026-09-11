@@ -7,6 +7,8 @@ from typing import Any
 
 import jsonschema
 
+from runtime.rex0.authority import authority_errors
+
 ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_DIR = ROOT / 'contracts'
 
@@ -34,10 +36,12 @@ def validate_action_contract(contract: dict[str, Any], now: datetime | None = No
         errors.append('contract is revoked')
     if _parse_time(contract['expires_at']) <= now:
         errors.append('contract is expired')
-    approval_roles = {item['actor_role'] for item in contract.get('approval_receipts', [])}
-    for role, required in contract['requires_approval'].items():
-        if required and role not in approval_roles:
+    for error in authority_errors(contract):
+        if error.startswith('missing_') and error.endswith('_approval'):
+            role = error[len('missing_'):-len('_approval')]
             errors.append(f'missing {role} approval receipt')
+        else:
+            errors.append(error)
     if set(contract.get('allowed_actions', [])) & set(contract.get('forbidden_actions', [])):
         errors.append('allowed_actions overlaps forbidden_actions')
     return errors
