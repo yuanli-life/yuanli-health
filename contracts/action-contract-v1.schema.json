@@ -12,8 +12,11 @@
     "allowed_domains",
     "allowed_actions",
     "requires_approval",
+    "issued_at",
     "expires_at",
-    "receipt_required"
+    "receipt_required",
+    "idempotency_key",
+    "schema_version"
   ],
   "properties": {
     "contract_id": {"type": "string", "pattern": "^ACT-[A-Za-z0-9._:-]+$"},
