@@ -1,0 +1,38 @@
+{
+  "receipt_id": "RCP-YH-REX0-SMOKE-001",
+  "contract_id": "ACT-YH-REX0-SMOKE-001",
+  "execution_id": "ego-task-31",
+  "principal_ref": "synthetic-founder-001",
+  "executor": {
+    "plane": "ego-browser",
+    "runtime": "ego-lite-0.4.7.4",
+    "task_space_ref": 31
+  },
+  "authority": {
+    "principal_approved": false,
+    "clinician_approved": false,
+    "steward_approved": false
+  },
+  "started_at": "2026-09-11T09:22:43.360Z",
+  "finished_at": "2026-09-11T09:22:43.363Z",
+  "status": "COMPLETED",
+  "attempted_actions": [
+    {
+      "action": "open_page",
+      "status": "SUCCESS",
+      "target_ref": "https://example.com/"
+    },
+    {
+      "action": "read_title",
+      "status": "SUCCESS",
+      "detail": "Example Domain"
+    }
+  ],
+  "external_reference": "https://example.com/",
+  "evidence_refs": [],
+  "artifact_hashes": [],
+  "error_class": "NONE",
+  "next_required_gate": null,
+  "no_secret_attestation": true,
+  "schema_version": "action-receipt-v1"
+}

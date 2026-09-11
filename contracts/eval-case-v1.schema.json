@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yuanli.life/schemas/eval-case-v1.schema.json",
+  "title": "Yuanli Health Intelligence Eval Case v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "surface",
+    "task_type",
+    "principal_ref",
+    "context",
+    "evidence",
+    "unknowns",
+    "authority_constraints",
+    "expected",
+    "forbidden"
+  ],
+  "properties": {
+    "case_id": {"type": "string", "pattern": "^YH-(GOLD|HN)-[0-9]{3,}$"},
+    "surface": {
+      "enum": [
+        "today",
+        "health_map",
+        "current_battles",
+        "evidence",
+        "clinical_collaboration",
+        "outcomes",
+        "learning",
+        "health_assets",
+        "health_sovereignty",
+        "review"
+      ]
+    },
+    "task_type": {"type": "string", "minLength": 3},
+    "principal_ref": {"type": "string", "pattern": "^synthetic-[A-Za-z0-9._:-]+$"},
+    "context": {"type": "object", "additionalProperties": true},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ref", "epistemic_status", "authority"],
+        "properties": {
+          "ref": {"type": "string"},
+          "epistemic_status": {
+            "enum": ["signal", "observation", "fact", "interpretation", "decision", "outcome", "learning"]
+          },
+          "authority": {
+            "enum": ["synthetic_fixture", "health_canon", "runtime_projection", "clinician", "principal"]
+          },
+          "value": {},
+          "occurred_at": {"type": "string"}
+        }
+      }
+    },
+    "unknowns": {"type": "array", "items": {"type": "string"}},
+    "conflicts": {"type": "array", "items": {"type": "string"}, "default": []},
+    "authority_constraints": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["result_class"]
+    },
+    "forbidden": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "severity": {"enum": ["P0", "P1", "P2"]},
+    "source_epoch": {"type": "string"},
+    "schema_version": {"const": "eval-case-v1"}
+  }
+}
