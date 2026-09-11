@@ -1,0 +1,30 @@
+{
+  "case_id": "YH-CGE1-GA-001",
+  "receipt_id": "HF-GA-001",
+  "provider": "huggingface",
+  "job_id": "6aa39ec621047bf1b0374f4b",
+  "job_status": "success",
+  "stage": "HF_INTELLIGENCE_PROVIDER_SHADOW",
+  "data_class": "D2",
+  "contains_phi": false,
+  "model_ref": {
+    "repo_id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "mutable_ref_used": false
+  },
+  "task": "semantic_evidence_ranking",
+  "ranking": [
+    {"evidence_id":"SYN-E04","score":0.493216},
+    {"evidence_id":"SYN-E01","score":0.493021},
+    {"evidence_id":"SYN-E03","score":0.424904},
+    {"evidence_id":"SYN-E02","score":0.4015},
+    {"evidence_id":"SYN-E05","score":0.327255}
+  ],
+  "authority": {
+    "candidate_intelligence_only": true,
+    "diagnosis": false,
+    "prescription": false,
+    "canon_write": false
+  },
+  "result_hash": "80741284ae5cd4121c6e560ef6deb22f5dc1cdb78e1cf2286db173e70b054436"
+}
