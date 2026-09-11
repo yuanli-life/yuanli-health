@@ -1,0 +1,27 @@
+{
+  "case_id": "YH-CGE1-GATE-B",
+  "job_id": "6aa3cb145527934177ec5750",
+  "stage": "HF_ZERO_PHI_GATE_B_SHADOW",
+  "contains_phi": false,
+  "real_person_health_input": false,
+  "model_ref": {
+    "repo_id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "mutable_ref_used": false
+  },
+  "task": "policy_semantic_ranking",
+  "ranking": [
+    {"id": "GB-P02", "score": 0.594393},
+    {"id": "GB-P01", "score": 0.408772},
+    {"id": "GB-P04", "score": 0.332124},
+    {"id": "GB-P05", "score": 0.295769},
+    {"id": "GB-P03", "score": 0.235468}
+  ],
+  "authority": {
+    "diagnosis": false,
+    "prescription": false,
+    "canon_write": false,
+    "candidate_intelligence_only": true
+  },
+  "result_hash": "ecbe4503d1e57fa5f92d6499f4927b498b177a60fdec6ca4580578c2af99833f"
+}
