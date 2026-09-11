@@ -1,0 +1,113 @@
+apiVersion: yuanli.health/v1
+kind: CompoundingProof
+metadata:
+  id: YH-CGE1
+  title: Sleep Recovery First End-to-End Compounding Proof
+  phase: gate_a_zero_phi
+  risk_tier: architecture_shadow
+  parent_law_ref: YH2-C1-HEALTH-CONSTITUTION.md
+
+objective:
+  question: >-
+    Can one health problem traverse Context, Evidence, Decision, Work Package,
+    Action, Outcome, Learning and Reuse while preserving sovereignty,
+    provenance, replaceable intelligence and fail-closed authority?
+
+interfaces:
+  RealityStore:
+    current_adapter: local_health_kernel
+    canonical_state: reality
+    required: true
+  RuntimeRelay:
+    current_adapter: supabase
+    canonical_state: observed_runtime
+    replaceable: true
+  LawRegistry:
+    current_adapter: github
+    canonical_state: desired_state
+    replaceable: true
+    outage_behavior: use_last_verified_bundle_and_deny_new_admissions
+  KnowledgeAdapter:
+    current_adapter: ob_llm_wiki
+    canonical_state: knowledge
+    replaceable: true
+    outage_behavior: use_frozen_evidence_snapshot_or_hold_if_freshness_required
+  IntelligenceProvider:
+    current_adapter: hugging_face
+    canonical_state: none
+    replaceable: true
+    outage_behavior: route_to_admitted_fallback_or_hold
+  ReasoningInterface:
+    current_adapter: chatgpt
+    canonical_state: none
+    replaceable: true
+    outage_behavior: deterministic_or_alternate_reasoner
+  HumanReviewSurface:
+    current_adapter: notion
+    canonical_state: human_review_projection
+    replaceable: true
+    outage_behavior: signed_local_review_packet
+
+data_policy:
+  gate_a_input_class: D2
+  cloud_max_default: D2
+  D4_cloud: deny
+  D5_cloud: deny
+  embedding_inherits_source_class: true
+  raw_phi_logging: deny
+
+authority:
+  principal:
+    can_authorize_gate_b: true
+    can_accept_action: true
+  health_ai:
+    can_propose_hypothesis: true
+    can_propose_reversible_action: true
+    can_diagnose: false
+    can_prescribe: false
+    can_write_health_canon: false
+  model_provider:
+    can_supply_intelligence: true
+    can_admit_self: false
+
+state_machine:
+  - S0_FREEZE
+  - S1_CONTEXT
+  - S2_EVIDENCE
+  - S3_INTELLIGENCE
+  - S4_REASONING
+  - S5_HUMAN_REVIEW
+  - S6_SHADOW_ACTION
+  - S7_OUTCOME_FIXTURE
+  - S8_LEARNING
+  - S9_REUSE
+
+critical_gates:
+  - zero_phi
+  - provenance_complete
+  - exact_artifact_revision
+  - fact_inference_separation
+  - no_autonomous_medical_authority
+  - no_direct_canon_write
+  - principal_gate_preserved
+  - saas_removal_protocol_survives
+
+pass_rule:
+  operator: all
+  dimensions:
+    - data_truth
+    - authority_truth
+    - intelligence_truth
+    - action_truth
+    - reality_truth
+    - learning_truth
+  critical_failure_overrides: true
+
+gate_b:
+  status: blocked_until_principal_approval
+  requires:
+    - gate_a_pass_receipt
+    - principal_explicit_approval
+    - fresh_local_reality_data
+    - reversible_intervention_contract
+    - stop_escalation_rules
