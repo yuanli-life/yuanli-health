@@ -1,0 +1,94 @@
+apiVersion: yuanli.health/v1
+kind: GateReceipt
+metadata:
+  receipt_id: YH-CGE1-GA-MACHINE-001
+  case_id: YH-CGE1-GA-001
+  issued_at: 2026-09-11T14:33:00+08:00
+  verified_at: 2026-09-11T14:38:00+08:00
+  phase: gate_a_zero_phi
+status: HUMAN_REVIEW_READY
+
+law:
+  adapter: github
+  branch: yh-cge1-sleep-recovery-gate-a
+  parent_main_sha: 2b9c5fea9ffa2a2d348ec64e7c938d96a1d677ac
+  ci_commit_sha: f665767e5fa0bf70fba4b4578cffc9f2c56cc734
+  ci_workflow: YH-CGE1 Gate A
+  ci_run_id: 34570700851
+  ci_conclusion: success
+  merged_to_main: false
+  result: PASS_DRAFT_NOT_LAW
+
+reality:
+  adapter: local_health_kernel_fixture
+  fixture: YH-CGE1-SYNTH-SLEEP-14D-V1
+  data_class: D2
+  real_person_data: false
+  health_canon_write: false
+  result: PASS
+
+runtime:
+  adapter: supabase
+  project: yuanli-health
+  case_id: YH-CGE1-GA-001
+  hf_run_id: 52565b8a-a27b-4132-9545-774ba29d7f99
+  chatgpt_run_id: d97ef5c7-4898-44d5-8848-a45e17c715b9
+  role: observed_state_and_receipts_only
+  result: PASS
+
+knowledge:
+  adapter: ob_llm_wiki
+  mode: staged_knowledge_adapter_packet
+  live_surface_direct_write: denied_by_gateway_acl
+  bypass_attempted: false
+  law_promotion: false
+  result: PASS_FAIL_CLOSED_STAGED
+
+intelligence:
+  adapter: hugging_face
+  job_id: 6aa39ec621047bf1b0374f4b
+  exact_model_ref: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2@e8f8c211226b894fcb81acc59f3b34ba3efd5f42
+  contains_phi: false
+  authority: candidate_only
+  result_hash: 80741284ae5cd4121c6e560ef6deb22f5dc1cdb78e1cf2286db173e70b054436
+  result: PASS
+
+reasoning:
+  adapter: chatgpt
+  receipt_sha256: b775dfa695a0a64ef5962c0fecb0bdbb5f46717a4dd40db1c9d33e66f873a8fc
+  fact_inference_separation: true
+  principal_gate_preserved: true
+  canon_write: false
+  result: PASS
+
+human_review:
+  adapter: notion
+  page_id: 3d88e1aa-ace4-8124-9dab-c145c293f4b1
+  page_url: https://app.notion.com/p/3d88e1aaace481249dabc145c293f4b1?pvs=204
+  gate_b: BLOCKED_AWAITING_PRINCIPAL_APPROVAL
+  result: READY
+
+portability:
+  receipt_sha256: 735cc63f74822e052b88410451504d684e56b067ac5c5c705ddf420662f4a4f7
+  scenarios: 7
+  all_protocol_survive: true
+  privileged_change_on_outage: false
+  local_kernel_outage_real_decision: BLOCK
+  result: PASS
+
+truth_dimensions:
+  data_truth: PASS
+  authority_truth: PASS
+  intelligence_truth: PASS
+  action_truth: PASS_SHADOW_ONLY
+  reality_truth: PASS_SYNTHETIC_ONLY
+  learning_truth: PASS_CONTRACT_ONLY
+
+final_gate:
+  machine_gates: PASS
+  github_ci: PASS
+  architecture_portability: PASS
+  seven_platform_discipline: PASS_WITH_OB_STAGED_ADAPTER
+  human_ratification: PENDING
+  gate_a: HUMAN_REVIEW_READY
+  gate_b: BLOCKED
