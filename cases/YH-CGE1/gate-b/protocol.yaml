@@ -1,0 +1,60 @@
+apiVersion: yuanli.health/v1
+kind: RealityTrial
+metadata:
+  id: YH-CGE1-GATE-B
+  parent_gate: YH-CGE1-GATE-A
+  parent_merge_sha: fb076f7ed7d3f1a97b569ba1912a51ebc1f25236
+  phase: n1_real_sleep_recovery
+  principal_authorized: true
+status: AUTHORIZED_HOLD_FRESHNESS
+objective:
+  prove: ACT -> OUT -> LRN -> REUSE on one reversible sleep-recovery action
+  forbid: claiming benefit before Reality settlement
+reality_policy:
+  canonical_source: LocalHealthKernel
+  raw_health_data_public_cloud: deny
+  sleep_session_max_age_hours: 24
+  require_complete_provenance: true
+  require_nonconflicted_reconciliation: true
+runtime_policy:
+  private_observed_state: Supabase
+  duplicate_sleep_intervention: deny
+  bind_existing_approved_loop_if_present: true
+knowledge_policy:
+  adapter: OB_LLM_Wiki
+  evidence_is_not_law: true
+  direct_law_promotion: deny
+intelligence_policy:
+  adapter: HuggingFace
+  real_person_raw_health_input: deny
+  allowed_scope: public_or_synthetic_evidence_model_eval
+  immutable_revision_required: true
+reasoning_policy:
+  adapter: ChatGPT
+  fact_inference_action_separation: required
+  diagnosis_or_prescription: deny
+human_policy:
+  adapter: Notion
+  principal_review_required: true
+  executable_law_write: deny
+action_policy:
+  one_primary_reversible_action: true
+  stop_rule_required: true
+  autonomous_behavior_change: deny
+activation_gate:
+  all:
+    - principal_authorized
+    - gate_a_merged
+    - fresh_local_reality
+    - provenance_complete
+    - no_conflicting_parallel_intervention
+  on_failure: HOLD_FAIL_CLOSED
+settlement_gate:
+  minimum_valid_observation_days: 2
+  compare_against: preregistered_baseline
+  learning_status_before_settlement: candidate
+  reusable_outputs:
+    - benchmark_case
+    - failure_case
+    - policy_candidate
+    - protocol_improvement
