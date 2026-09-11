@@ -1,0 +1,54 @@
+{
+  "proof_id": "YH-REX0-R1-DIRECT-QUEUE-2026-09-11",
+  "status": "PASS_SHADOW_DIRECT_QUEUE",
+  "scope": "Synthetic/public READ-only proof; no real health data, clinical action, credential payload, or irreversible action",
+  "contract": {
+    "contract_id": "ACT-YH-REX0-R1-DIRECT-001",
+    "action_class": "READ",
+    "principal_ref": "synthetic-founder-001",
+    "allowed_domains": ["example.com"],
+    "allowed_actions": ["open_page", "read_title"]
+  },
+  "n8n": {
+    "instance": "hay2045.app.n8n.cloud",
+    "workflow_id": "eTQuQj690rcvYj1f",
+    "workflow_name": "YH-REX0-R1 | Ephemeral Queue Bridge",
+    "workflow_version_id": "f9f332bf-a169-4d41-8e02-e7348a86e5e6",
+    "contract_queue_execution_id": "6",
+    "worker_pull_execution_id": "7",
+    "receipt_store_execution_id": "8",
+    "contract_queue_result": "QUEUED",
+    "worker_pull_result": "DISPATCH",
+    "receipt_store_result": "RECEIPT_STORED",
+    "post_proof_active": false
+  },
+  "ego": {
+    "runtime": "ego-lite",
+    "task_space_ref": 45,
+    "execution_id": "ego-task-45",
+    "external_reference": "https://example.com/",
+    "page_title": "Example Domain",
+    "status": "COMPLETED"
+  },
+  "receipt": {
+    "receipt_id": "RCP-YH-REX0-R1-DIRECT-001",
+    "contract_id": "ACT-YH-REX0-R1-DIRECT-001",
+    "execution_id": "ego-task-45",
+    "status": "COMPLETED",
+    "no_secret_attestation": true,
+    "schema_version": "action-receipt-v1"
+  },
+  "reality_chain": [
+    "local worker POST Action Contract to n8n queue",
+    "n8n persists pending contract in workflow static state",
+    "local Ego worker polls n8n pull endpoint",
+    "n8n dispatches Action Contract",
+    "bounded Ego runner executes public READ",
+    "Ego emits typed Action Receipt",
+    "local worker POSTs Receipt to n8n",
+    "n8n stores Receipt in workflow static state"
+  ],
+  "transport_character": "One-shot unattended worker script performed queue, pull, Ego execution, and receipt return without chat-mediated data relay between steps.",
+  "observed_at": "2026-09-11T10:28:10.718Z",
+  "admission": "R1 proves direct shadow transport for synthetic READ actions. It is not production-grade authentication and must not be used with real health data until an authenticated queue bridge is installed."
+}
