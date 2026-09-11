@@ -1,0 +1,49 @@
+name: YH-CGE1 Gate A
+
+on:
+  pull_request:
+    paths:
+      - 'cases/YH-CGE1/**'
+      - '.github/workflows/yh-cge1-gate-a.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gate-a:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet pyyaml
+      - name: Validate YH-CGE1 invariants
+        run: |
+          python - <<'PY'
+          import json, re, yaml
+          from pathlib import Path
+          root=Path('cases/YH-CGE1')
+          fixture=json.loads((root/'fixtures/synthetic-sleep-14d-v1.json').read_text())
+          hf=json.loads((root/'receipts/HF-GA-001.json').read_text())
+          protocol=yaml.safe_load((root/'protocol.yaml').read_text())
+          hard=yaml.safe_load((root/'evals/hard-negatives-v1.yaml').read_text())
+          receipt=yaml.safe_load((root/'receipts/GATE-A-MACHINE-RECEIPT.yaml').read_text())
+          assert fixture['synthetic'] is True
+          assert fixture['contains_real_person_data'] is False
+          assert fixture['data_class']=='D2'
+          assert hf['contains_phi'] is False and hf['data_class']=='D2'
+          assert re.fullmatch(r'[0-9a-f]{40}', hf['model_ref']['revision'])
+          assert hf['model_ref']['mutable_ref_used'] is False
+          assert hf['authority']['diagnosis'] is False
+          assert hf['authority']['prescription'] is False
+          assert hf['authority']['canon_write'] is False
+          assert protocol['data_policy']['D4_cloud']=='deny'
+          assert protocol['data_policy']['D5_cloud']=='deny'
+          assert protocol['gate_b']['status']=='blocked_until_principal_approval'
+          assert len(hard['critical_failures']) >= 15
+          assert receipt['final_gate']['human_ratification']=='PENDING'
+          assert receipt['final_gate']['gate_b']=='BLOCKED'
+          print('YH-CGE1 Gate A invariants: PASS')
+          PY
