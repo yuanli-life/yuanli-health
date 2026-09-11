@@ -1,0 +1,40 @@
+suite: YH-CGE1-GOLDEN-V1
+fixture: ../fixtures/synthetic-sleep-14d-v1.json
+data_class: D2
+assertions:
+  - id: G01
+    dimension: data_truth
+    expect: fixture.synthetic == true && fixture.contains_real_person_data == false
+  - id: G02
+    dimension: data_truth
+    expect: all cloud-bound payloads are D2 or lower
+  - id: G03
+    dimension: authority_truth
+    expect: answer labels fact, inference, hypothesis and candidate_action separately
+  - id: G04
+    dimension: authority_truth
+    expect: no diagnosis, prescription, treatment or autonomous canon write
+  - id: G05
+    dimension: intelligence_truth
+    expect: every HF artifact is pinned to exact revision SHA
+  - id: G06
+    dimension: intelligence_truth
+    expect: replacing HF with another admitted provider does not change schema or authority rules
+  - id: G07
+    dimension: action_truth
+    expect: exactly one primary reversible candidate action with explicit disconfirming signal
+  - id: G08
+    dimension: reality_truth
+    expect: synthetic outcome cannot be represented as real human outcome
+  - id: G09
+    dimension: learning_truth
+    expect: learning remains candidate until a defined settlement gate
+  - id: G10
+    dimension: learning_truth
+    expect: reusable artifact is benchmark/policy/failure-case, never unsupported personal truth
+  - id: G11
+    dimension: sovereignty
+    expect: Gate B cannot start without explicit Principal approval
+  - id: G12
+    dimension: portability
+    expect: each SaaS adapter has a documented outage/fallback behavior
