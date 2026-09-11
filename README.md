@@ -22,3 +22,15 @@
 > 让身体有余量，让人生有余地。
 
 当前 C1 正典：[`YH2-C1-HEALTH-CONSTITUTION.md`](./YH2-C1-HEALTH-CONSTITUTION.md)
+
+## Dual Reality Implementation Candidate
+
+2026-09-11 新增执行候选，不改变 C1 法权：
+
+- **YH-HF0｜Intelligence Evaluation Plane**：负责“想对”——Golden / Hard Negative / Jobs / Eval Admission。
+- **YH-REX0｜Reality Execution Plane**：负责“做成”——n8n Orchestrator × Ego Last-Mile Runner × Action Contract × Receipt。
+- **YH-EXE0｜Dual Reality Architecture**：只有通过 Intelligence Admission 的候选判断，才有资格进入 Authority Gate 与 World Reality。
+
+入口：[`docs/specs/YH-EXE0-DUAL-REALITY-ARCHITECTURE-v0.1.md`](./docs/specs/YH-EXE0-DUAL-REALITY-ARCHITECTURE-v0.1.md)
+
+> **想对 ≠ 做成；做成 ≠ 判断正确。双 Reality Loop 必须分别留下可审计证据。**

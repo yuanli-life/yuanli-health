@@ -1,0 +1,56 @@
+{
+  "proof_id": "YH-REX0-R0-E2E-2026-09-11",
+  "status": "PASS_SHADOW_READ_ONLY",
+  "scope": "Synthetic public-data READ proof only; no real health data, no clinical action, no irreversible action",
+  "contract": {
+    "contract_id": "ACT-YH-REX0-SMOKE-001",
+    "action_class": "READ",
+    "principal_ref": "synthetic-founder-001",
+    "allowed_domains": ["example.com"],
+    "allowed_actions": ["open_page", "read_title"],
+    "receipt_required": true
+  },
+  "n8n": {
+    "instance": "hay2045.app.n8n.cloud",
+    "workflow_id": "oRBIb8EfBj6I26os",
+    "workflow_name": "YH-REX0-R0 | Action Contract + Receipt Gateway",
+    "workflow_version_id": "5a258e79-4824-4aa8-b812-0b18c8070a0c",
+    "contract_execution_id": "1",
+    "receipt_execution_id": "2",
+    "contract_result": "ADMITTED",
+    "receipt_result": "RECEIPT_ACCEPTED",
+    "hard_negative_execution_ids": ["3", "4", "5"],
+    "hard_negatives": {
+      "COMMIT_NO_PRINCIPAL": "REJECTED: R0 only admits READ",
+      "CLINICAL_NO_CLINICIAN": "REJECTED: R0 only admits READ",
+      "UNSUPPORTED_ACTION": "REJECTED: unsupported action"
+    },
+    "post_proof_active": false
+  },
+  "ego": {
+    "runtime": "ego-lite",
+    "task_space_ref": 38,
+    "execution_id": "ego-task-38",
+    "external_reference": "https://example.com/",
+    "page_title": "Example Domain",
+    "status": "COMPLETED"
+  },
+  "receipt": {
+    "receipt_id": "RCP-YH-REX0-SMOKE-001",
+    "contract_id": "ACT-YH-REX0-SMOKE-001",
+    "execution_id": "ego-task-38",
+    "status": "COMPLETED",
+    "no_secret_attestation": true,
+    "schema_version": "action-receipt-v1"
+  },
+  "reality_chain": [
+    "Action Contract",
+    "n8n admission gate",
+    "bounded Ego runner",
+    "external public page READ",
+    "Action Receipt",
+    "n8n receipt acceptance"
+  ],
+  "observed_at": "2026-09-11T10:19:48.380Z",
+  "admission": "R0 proves the bounded World Reality spine for READ-only synthetic actions. It does not authorize production health actions, clinical actions, or real Principal data."
+}

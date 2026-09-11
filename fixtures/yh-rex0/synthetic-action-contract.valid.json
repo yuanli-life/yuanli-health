@@ -1,0 +1,26 @@
+{
+  "contract_id": "ACT-YH-REX0-SMOKE-001",
+  "principal_ref": "synthetic-founder-001",
+  "objective": "Open a harmless public page and confirm the Ego runner can produce a receipt without side effects",
+  "action_class": "READ",
+  "allowed_domains": ["example.com"],
+  "allowed_actions": ["open_page", "read_title"],
+  "forbidden_actions": ["submit_form", "download_file", "share_data"],
+  "payload": {
+    "url": "https://example.com/"
+  },
+  "sensitivity": "public",
+  "requires_approval": {
+    "principal": false,
+    "clinician": false,
+    "steward": false
+  },
+  "approval_receipts": [],
+  "issued_at": "2026-09-11T09:00:00Z",
+  "expires_at": "2026-12-31T23:59:59Z",
+  "revoked": false,
+  "receipt_required": true,
+  "idempotency_key": "yh-rex0-smoke-001",
+  "policy_ref": "YH-REX0-v0.1",
+  "schema_version": "action-contract-v1"
+}

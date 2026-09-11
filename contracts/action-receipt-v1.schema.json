@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yuanli.life/schemas/action-receipt-v1.schema.json",
+  "title": "Yuanli Health Action Receipt v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_id",
+    "contract_id",
+    "execution_id",
+    "principal_ref",
+    "executor",
+    "started_at",
+    "finished_at",
+    "status",
+    "attempted_actions",
+    "no_secret_attestation"
+  ],
+  "properties": {
+    "receipt_id": {"type": "string", "pattern": "^RCP-[A-Za-z0-9._:-]+$"},
+    "contract_id": {"type": "string", "pattern": "^ACT-[A-Za-z0-9._:-]+$"},
+    "execution_id": {"type": "string", "minLength": 3},
+    "principal_ref": {"type": "string", "minLength": 3},
+    "lease_token": {"type": "string", "minLength": 8},
+    "executor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["plane", "runtime"],
+      "properties": {
+        "plane": {"enum": ["api", "ego-browser", "human", "clinical"]},
+        "runtime": {"type": "string", "minLength": 2},
+        "task_space_ref": {"type": ["string", "integer"]}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "principal_approved": {"type": "boolean"},
+        "clinician_approved": {"type": "boolean"},
+        "steward_approved": {"type": "boolean"}
+      }
+    },
+    "started_at": {"type": "string", "format": "date-time"},
+    "finished_at": {"type": "string", "format": "date-time"},
+    "status": {
+      "enum": ["COMPLETED", "FAILED", "PARTIAL", "CANCELLED", "EXPIRED", "BLOCKED"]
+    },
+    "attempted_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["action", "status"],
+        "properties": {
+          "action": {"type": "string", "minLength": 2},
+          "status": {"enum": ["SUCCESS", "FAILED", "SKIPPED", "BLOCKED"]},
+          "target_ref": {"type": "string"},
+          "detail": {"type": "string", "maxLength": 500}
+        }
+      }
+    },
+    "external_reference": {"type": "string", "maxLength": 200},
+    "evidence_refs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": []
+    },
+    "artifact_hashes": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^[A-Fa-f0-9]{32,128}$"},
+      "default": []
+    },
+    "error_class": {
+      "enum": [
+        "NONE",
+        "TRANSIENT_NETWORK",
+        "TRANSIENT_UI",
+        "DOMAIN_DRIFT",
+        "AUTHORITY_MISSING",
+        "CONTRACT_INVALID",
+        "CONTRACT_EXPIRED",
+        "CONTRACT_REVOKED",
+        "TARGET_CHANGED",
+        "EXTERNAL_REJECTION",
+        "UNKNOWN"
+      ]
+    },
+    "next_required_gate": {"type": ["string", "null"]},
+    "no_secret_attestation": {"const": true},
+    "schema_version": {"const": "action-receipt-v1"}
+  }
+}
