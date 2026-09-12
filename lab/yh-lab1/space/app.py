@@ -96,7 +96,7 @@ CSS = """
 #gate { border-left: 4px solid #0f6248; padding-left: 16px; }
 """
 
-with gr.Blocks(title='YH-LAB1 | Experimental Intelligence Lab', css=CSS) as demo:
+with gr.Blocks(title='YH-LAB1 | Experimental Intelligence Lab') as demo:
     gr.Markdown(
         '# YH-LAB1｜Repeatable Health Office Experimental Intelligence Lab\n'
         '**Synthetic-only private lab. HF Lab Output ≠ Product Truth ≠ Clinical Truth.**',
@@ -169,4 +169,4 @@ with gr.Blocks(title='YH-LAB1 | Experimental Intelligence Lab', css=CSS) as demo
 
 
 if __name__ == '__main__':
-    demo.launch(mcp_server=True)
+    demo.launch(mcp_server=True, css=CSS)
