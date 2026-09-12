@@ -10,7 +10,7 @@ subject:
 country: Singapore
 as_of: 2026-09-12
 status: reality_researched
-notion_projection: pending
+notion_projection: https://app.notion.com/p/3d98e1aaace48126be2df4eef80894fc?pvs=204
 ---
 
 # YH-LW1｜Longevity World × MORROW Business Model Reality Audit
