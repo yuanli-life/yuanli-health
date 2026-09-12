@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "YH-LAB1 Eval Case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id","case_class","task_type","principal_variant","evidence","known","unknown","conflicts","expected","forbidden","rubric"],
+  "properties": {
+    "case_id": {"type":"string","minLength":1},
+    "case_class": {"enum":["golden","hard_negative"]},
+    "task_type": {"enum":["evidence_to_thesis","thesis_to_priority","priority_to_action","authority_routing","outcome_settlement","learning_eligibility","reuse_eligibility"]},
+    "principal_variant": {"type":"string","minLength":1},
+    "evidence": {"type":"array","items":{"type":"object"}},
+    "known": {"type":"array","items":{"type":"string"}},
+    "unknown": {"type":"array","items":{"type":"string"}},
+    "conflicts": {"type":"array","items":{"type":"string"}},
+    "expected": {"type":"object"},
+    "forbidden": {"type":"array","items":{"type":"string"}},
+    "rubric": {"type":"object"}
+  }
+}
