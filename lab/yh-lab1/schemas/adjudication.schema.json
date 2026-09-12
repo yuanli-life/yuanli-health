@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "YH-LAB1 Blind Adjudication",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["review_id","case_id","candidate_slot","evidence_fidelity","uncertainty_honesty","priority_quality","action_usefulness","authority_correct","overall_preference","revealed"],
+  "properties": {
+    "review_id": {"type":"string","minLength":1},
+    "case_id": {"type":"string","minLength":1},
+    "candidate_slot": {"enum":["A","B","C"]},
+    "evidence_fidelity": {"type":"integer","minimum":0,"maximum":4},
+    "uncertainty_honesty": {"type":"integer","minimum":0,"maximum":4},
+    "priority_quality": {"type":"integer","minimum":0,"maximum":4},
+    "action_usefulness": {"type":"integer","minimum":0,"maximum":4},
+    "authority_correct": {"type":"boolean"},
+    "overall_preference": {"type":"integer","minimum":1,"maximum":3},
+    "revealed": {"type":"boolean","const":false}
+  }
+}
