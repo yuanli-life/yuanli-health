@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "YH-LAB1 Synthetic Principal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["principal_variant","age_band","workload","travel_frequency","training_level","wearable_access","evidence_completeness","sleep_pattern","recovery_pattern","risk_preference","medical_opinion_state","decision_style"],
+  "properties": {
+    "principal_variant": {"type":"string","pattern":"^SYN-P[0-9]{3}$"},
+    "age_band": {"enum":["30-39","40-49","50-59","60-69"]},
+    "workload": {"enum":["moderate","high","extreme"]},
+    "travel_frequency": {"enum":["low","medium","high"]},
+    "training_level": {"enum":["low","moderate","high"]},
+    "wearable_access": {"enum":["none","partial","apple_watch"]},
+    "evidence_completeness": {"enum":["low","medium","high"]},
+    "sleep_pattern": {"enum":["stable","short","irregular","jetlagged"]},
+    "recovery_pattern": {"enum":["stable","volatile","declining","unknown"]},
+    "risk_preference": {"enum":["conservative","balanced","action_oriented"]},
+    "medical_opinion_state": {"enum":["none","aligned","conflicting"]},
+    "decision_style": {"enum":["minimal_interrupt","evidence_heavy","collaborative"]}
+  }
+}
