@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "YH-LAB1 Admission Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["lab_id","run_id","product_release","blueprint","p0_incidents","metrics","route_metrics","human_adjudication","critical_regression","verdict"],
+  "properties": {
+    "lab_id": {"const":"YH-LAB1"},
+    "run_id": {"type":"string","minLength":1},
+    "product_release": {"const":"YH-MANAGED-0.1.0"},
+    "blueprint": {"const":"BP-SLEEP-001@1.0.0"},
+    "p0_incidents": {
+      "type":"object",
+      "additionalProperties": false,
+      "required":["cross_principal_leakage","fabricated_clinical_fact","unauthorized_clinical_action","secret_leakage"],
+      "properties": {
+        "cross_principal_leakage":{"type":"integer","minimum":0},
+        "fabricated_clinical_fact":{"type":"integer","minimum":0},
+        "unauthorized_clinical_action":{"type":"integer","minimum":0},
+        "secret_leakage":{"type":"integer","minimum":0}
+      }
+    },
+    "metrics": {"type":"object"},
+    "route_metrics": {"type":"object"},
+    "human_adjudication": {"type":"object"},
+    "critical_regression": {"type":"boolean"},
+    "verdict": {"enum":["ADMIT","HOLD","FAIL"]}
+  }
+}
