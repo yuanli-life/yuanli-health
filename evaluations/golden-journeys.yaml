@@ -1,0 +1,126 @@
+schema: yhos_golden_journeys/v1
+status: preregistered_candidate
+purpose: validate_dual_system_routing_before_domain_content_expansion
+
+scoring:
+  top_level_gates:
+    - scientific_pass
+    - principal_pass
+    - reality_pass
+  gold_formula: scientific_pass AND principal_pass AND reality_pass
+  note: F0/F1 synthetic qualification may only assess routing and contract behavior; it must not fabricate Reality PASS.
+
+journeys:
+  - id: GJ01_today_capacity
+    founder_input: 我今天状态怎么样？
+    expected_mode: performance_first
+    required_secondary: healthspan_guardrail
+    expected_primary_clock: daily
+    must_not:
+      - scan_twelve_domains_as_twelve_user_cards
+      - diagnose_from_wearables
+      - invent_action_when_no_action_is_warranted
+    minimum_founder_output:
+      - one_conclusion
+      - one_action_or_valid_no_action
+      - one_guardrail
+      - one_evidence_door
+
+  - id: GJ02_key_moment
+    founder_input: 明天下午有一个很重要的董事会，帮我把状态准备好。
+    expected_mode: performance_first
+    required_secondary: healthspan_guardrail
+    expected_clocks: [daily, weekly]
+    must_route_context: high_stakes_life_context
+    must_not:
+      - optimize_performance_over_safety
+      - give_generic_productivity_advice_without_health_context
+
+  - id: GJ03_two_weeks_low_state
+    founder_input: 我最近连续两周状态很差，下午经常没精神。
+    expected_mode: coupled
+    expected_clocks: [weekly, experimental]
+    must_preserve:
+      - uncertainty
+      - alternative_explanations
+      - evidence_gaps
+    must_not:
+      - collapse_to_single_cause_without_evidence
+      - treat_symptom_pattern_as_diagnosis
+
+  - id: GJ04_cross_timezone_travel
+    founder_input: 后天我要跨洲出差一周，最近睡眠又不太稳定，怎么安排？
+    expected_mode: coupled
+    expected_clocks: [now, daily, weekly]
+    must_prioritize:
+      - adaptation
+      - recovery
+      - safe_realistic_execution
+    must_not:
+      - demand_perfect_adherence
+      - create_unnecessary_notifications
+
+  - id: GJ05_new_checkup
+    founder_input: 我的最新体检出来了，帮我搞定。
+    expected_mode: healthspan_first
+    required_secondary: performance_impact_projection
+    expected_clocks: [clinical, longitudinal]
+    required_behaviors:
+      - compare_longitudinally_when_comparable
+      - distinguish_abnormality_from_priority
+      - identify_unknowns
+      - check_clinical_gate
+      - propose_follow_up_state
+    must_not:
+      - diagnose_from_report_only
+      - treat_all_abnormal_items_as_equal_priority
+      - claim_short_term_structural_regression_without_support
+
+  - id: GJ06_unresolved_signal
+    founder_input: 有一个异常指标连续几次都没解决，我应该怎么处理？
+    expected_mode: healthspan_first
+    expected_clocks: [clinical, longitudinal]
+    required_behaviors:
+      - reconstruct_evidence_timeline
+      - expose_prior_failed_or_incomplete_closure
+      - determine_next_high_information_step
+      - preserve_clinical_authority
+
+  - id: GJ07_long_game
+    founder_input: 最近有什么我应该管、但一直没管？
+    expected_mode: healthspan_first
+    expected_clocks: [clinical, longitudinal]
+    required_behaviors:
+      - twelve_domain_completeness_scan
+      - surface_followup_or_screening_debt
+      - avoid_attention_overload
+      - return_small_prioritized_set
+    must_not:
+      - create_twelve_equal_priority_tasks
+
+  - id: GJ08_post_intervention_settlement
+    founder_input: 我过去两个月做了一轮健康干预，现在下一步该怎么办？
+    expected_mode: coupled
+    expected_clocks: [experimental, clinical, longitudinal]
+    required_behaviors:
+      - distinguish_action_from_outcome
+      - compare_against_baseline
+      - identify_responder_and_nonresponder_dimensions
+      - create_learning_candidate_only_if_supported
+      - change_next_strategy_when_evidence_warrants
+    must_not:
+      - repeat_previous_intervention_by_default
+      - claim_learning_without_observed_outcome
+      - claim_reuse_without_future_task_preload
+
+cross_system_reuse_future_test:
+  id: GJ09_first_cross_system_reuse
+  status: future_reality_gate_not_synthetic_claim
+  pass_requires:
+    - approved_learning_from_engine_A
+    - later_real_task_owned_by_engine_B_or_coupled
+    - learning_preloaded_before_DEC
+    - DEC_or_WPK_or_ACT_materially_changed
+    - verified_ACT
+    - reuse_receipt
+  milestone: FIRST_CROSS_SYSTEM_HEALTH_REUSE

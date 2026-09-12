@@ -1,0 +1,122 @@
+schema: yhos_ontology_registry/v1
+status: proposed
+principle: one_concept_one_identity
+
+source_pins:
+  health_domain_constitution:
+    repository: moonstachain/yuanli-health-apple
+    path: docs/domain-os/YUANLI-HEALTH-CONSTITUTION-v1.md
+    sha: 0d4e17f9223b1d035818547447041e108b2a4d6f
+  fhp2_strategic_charter:
+    repository: moonstachain/yuanli-health-apple
+    path: docs/fhp/FHP2-STRATEGIC-CHARTER-v2.md
+    sha: 7baf5524c7b54e22c4bd0e6012226f6c8601a6e5
+  fhp2_product_architecture:
+    repository: moonstachain/yuanli-health-apple
+    path: apps/FHP2FounderHealthWeb/docs/product/FHP2-Founder-Health-Whole-System-Product-Architecture.md
+    sha: 7b8d45489317d700a9b597c2464ac2c445323905
+
+north_star:
+  id: health_optionality
+  canonical_name: Health Optionality
+  zh: 长期生命选择权
+  authority: upstream_health_domain_constitution
+
+human_functional_capacities:
+  canonical_collective_name: Six Human Functional Capacities
+  zh_collective_name: 六大生命功能能力
+  authority: yhos_f0_1_functional_projection
+  ontology_status: functional_projection_not_domain_not_fhp2_runtime_capability
+  naming_guardrail: >-
+    Never call these generically "the six FHP2 capabilities". FHP2 Strategic
+    Charter v2 already uses six product runtime capabilities for Evidence Vault,
+    Truth Compiler, Battle Engine, Intent Gateway, Outcome Ledger and Settlement
+    Engine. These are human functional capacities only.
+  items:
+    - {id: recover, canonical_name: Recover, zh: 恢复}
+    - {id: adapt, canonical_name: Adapt, zh: 应变}
+    - {id: energize, canonical_name: Energize, zh: 供能}
+    - {id: move, canonical_name: Move, zh: 身体储备}
+    - {id: think, canonical_name: Think, zh: 认知表现}
+    - {id: connect, canonical_name: Connect, zh: 心理与意义}
+
+health_domains:
+  authority: fhp2_product_architecture
+  ownership: shared_scientific_backbone
+  callable_by: [performance, healthspan]
+  healthspan_completeness_scan: true
+  expected_count: 12
+  source_has_exact_ids: true
+  items:
+    - {id: H01, canonical_name: 深度睡眠与昼夜节律, group: human_performance}
+    - {id: H02, canonical_name: 运动与体能, group: human_performance}
+    - {id: H03, canonical_name: 营养与代谢, group: human_performance}
+    - {id: H04, canonical_name: 压力与恢复, group: human_performance}
+    - {id: H05, canonical_name: 认知与专注, group: human_performance}
+    - {id: H06, canonical_name: 心血管与健康寿命, group: body_resilience}
+    - {id: H07, canonical_name: 肌骨、疼痛与人体工学, group: body_resilience}
+    - {id: H08, canonical_name: 心理健康与职业耗竭, group: body_resilience}
+    - {id: H09, canonical_name: 器官韧性与用药安全, group: body_resilience}
+    - {id: H10, canonical_name: 癌症、免疫与感染预防, group: body_resilience}
+    - {id: H11, canonical_name: 激素、性与生殖健康, group: body_resilience}
+    - {id: H12, canonical_name: 预防医学与健康主权, group: health_sovereignty}
+  note: >-
+    The twelve domains are the shared scientific completeness backbone. They are
+    not owned exclusively by the Healthspan Engine; both Engines may route into
+    them. Healthspan is responsible for longitudinal completeness scanning.
+
+founder_contexts:
+  authority: fhp2_product_architecture
+  expected_count: 4
+  source_has_exact_ids: true
+  items:
+    - {id: C01, canonical_name: 关键战役}
+    - {id: C02, canonical_name: 差旅与跨时区}
+    - {id: C03, canonical_name: 商务宴请}
+    - {id: C04, canonical_name: 红夜与业务连续性}
+  ontology_status: context_modifier_not_truth
+
+health_clocks:
+  authority: health_domain_constitution_plus_public_projection
+  items:
+    - {id: now, zh: 即时}
+    - {id: daily, zh: 日}
+    - {id: weekly, zh: 周}
+    - {id: experimental, zh: 干预窗口}
+    - {id: clinical, zh: 临床}
+    - {id: longitudinal, zh: 长期}
+  invariant: short_clock_cannot_overwrite_long_clock
+
+roles:
+  authority: fhp2_product_architecture_and_health_authority_policy
+  expected_count: 5
+  source_has_machine_ids: false
+  local_reference_ids_are_non_authoritative: true
+  items:
+    - {local_ref_id: principal, canonical_name: Principal}
+    - {local_ref_id: health_navigator, canonical_name: Health Navigator}
+    - {local_ref_id: clinician, canonical_name: 医生}
+    - {local_ref_id: coach_specialist, canonical_name: 教练/营养师/康复师}
+    - {local_ref_id: ai_health_brain, canonical_name: AI 原力健康大脑}
+  note: >-
+    The frozen upstream product architecture defines canonical role labels but
+    does not expose machine IDs for all roles. Local reference IDs exist only for
+    routing and must never be presented as upstream canonical IDs.
+
+truth_types:
+  items:
+    - id: scientific_truth
+      meaning: population_or_general_evidence
+    - id: personal_truth
+      meaning: principal_specific_observed_or_adjudicated_reality
+    - id: clinical_truth
+      meaning: clinically_authorized_conclusion
+
+validation:
+  reject_duplicate_ids: true
+  reject_unregistered_domain_aliases: true
+  reject_human_capacity_as_domain: true
+  reject_intent_as_domain: true
+  reject_context_as_truth: true
+  reject_surface_as_truth_owner: true
+  reject_local_role_ref_as_upstream_canonical_id: true
