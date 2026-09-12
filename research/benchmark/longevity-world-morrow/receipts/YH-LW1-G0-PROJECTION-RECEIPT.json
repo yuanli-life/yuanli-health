@@ -1,0 +1,28 @@
+{
+  "receipt_id": "YH-LW1-G0-PROJECTION-RECEIPT",
+  "object_id": "YH-LW1",
+  "domain": "yuanli-health",
+  "authority": "research_candidate",
+  "as_of": "2026-09-12",
+  "github": {
+    "repository": "yuanli-life/yuanli-health",
+    "branch": "research/yh-lw1-longevity-world-morrow-20260912",
+    "canon_candidate": "research/benchmark/longevity-world-morrow/YH-LW1-business-model-reality-audit.md",
+    "pattern_admission": "research/benchmark/longevity-world-morrow/admissions/YH-LW1-PATTERN-ADMISSION.md",
+    "source_registry": "research/benchmark/longevity-world-morrow/source-registry.yaml"
+  },
+  "notion": {
+    "workspace": "Yuanli Portal",
+    "parent": "YHT0｜Yuanli Health Think Tank Constitution｜原力健康智库宪法",
+    "projection_title": "YH-LW1｜Longevity World × MORROW｜商业模式 × Pattern Admission",
+    "projection_url": "https://app.notion.com/p/3d98e1aaace48126be2df4eef80894fc?pvs=204",
+    "role": "human_projection"
+  },
+  "authority_contract": {
+    "machine_canon_candidate": "github",
+    "human_projection": "notion",
+    "dual_authority_forbidden": true,
+    "notion_may_summarize_but_not_outrank_github": true
+  },
+  "status": "PROJECTION_BOUND / HUMAN_REVIEW_PENDING"
+}
