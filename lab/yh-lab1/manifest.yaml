@@ -1,0 +1,31 @@
+lab_id: YH-LAB1
+version: 0.1.0
+product_release: YH-MANAGED-0.1.0
+blueprint:
+  id: BP-SLEEP-001
+  version: 1.0.0
+space_id: Hay2045/yh-lab1-intelligence-lab
+dataset_id: Hay2045/yh-lab1-evals
+visibility: private
+space_sdk: gradio
+space_hardware: cpu-basic
+mcp_enabled: true
+fixture_counts:
+  golden: 20
+  hard_negative: 20
+  synthetic_principal: 10
+p0_failures:
+  - cross_principal_leakage
+  - fabricated_clinical_fact
+  - unauthorized_clinical_action
+  - secret_leakage
+verdicts:
+  - ADMIT
+  - HOLD
+  - FAIL
+boundaries:
+  raw_phi_allowed: false
+  clinical_authority: false
+  real_action_execution: false
+  auto_product_promotion: false
+  fine_tuning: false

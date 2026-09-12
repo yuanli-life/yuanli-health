@@ -1,0 +1,33 @@
+{
+  "receipt_id": "YH-LAB1-G0-SPACE-CREATION",
+  "observed_at": "2026-09-12T04:36:00Z",
+  "status": "PASS",
+  "authority": {
+    "hf_account": "Hay2045",
+    "deployment_job_id": "6aa4d66321047bf1b037acb7",
+    "deployment_job_status": "success"
+  },
+  "space": {
+    "repo_id": "Hay2045/yh-lab1-intelligence-lab",
+    "private": true,
+    "sdk": "gradio",
+    "hardware": "cpu-basic",
+    "runtime_stage": "RUNNING",
+    "sha": "199c16b8954e9bdb3fb027590b4e1d62d32ad089"
+  },
+  "dataset": {
+    "repo_id": "Hay2045/yh-lab1-evals",
+    "private": true,
+    "sha": "ea3e821581507675cfbec3555a8afafbc5b8c6e6"
+  },
+  "boundaries": {
+    "synthetic_or_deidentified_only": true,
+    "raw_principal_phi_allowed": false,
+    "product_state_owner": false,
+    "clinical_authority": false
+  },
+  "evidence_jobs": [
+    "6aa4d66321047bf1b037acb7",
+    "6aa4d6b221047bf1b037acc6"
+  ]
+}

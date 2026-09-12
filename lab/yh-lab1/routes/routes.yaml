@@ -1,0 +1,16 @@
+routes:
+  - route_id: route_qwen3
+    model_id: Qwen/Qwen3-8B
+    provider: huggingface_inference
+    role: general_reasoning
+  - route_id: route_phi4mini
+    model_id: microsoft/Phi-4-mini-instruct
+    provider: huggingface_inference
+    role: compact_reasoning
+  - route_id: route_mistral7b
+    model_id: mistralai/Mistral-7B-Instruct-v0.3
+    provider: huggingface_inference
+    role: baseline_reasoning
+policy:
+  silent_fallback: false
+  unavailable_route_behavior: HOLD_ROUTE_AVAILABILITY

@@ -1,0 +1,34 @@
+{
+  "receipt_id": "YH-LAB1-G1-SHADOW-EVAL",
+  "observed_at": "2026-09-12T04:36:50Z",
+  "status": "HOLD_ROUTE_AVAILABILITY",
+  "provider_smoke_job_id": "6aa4d6d921047bf1b037acdd",
+  "routes": [
+    {
+      "route_id": "route_qwen3",
+      "model_id": "Qwen/Qwen3-8B",
+      "availability": "ROUTE_UNAVAILABLE",
+      "http_status": 403,
+      "reason": "Current authentication method lacks permission to call Hugging Face Inference Providers on behalf of Hay2045."
+    },
+    {
+      "route_id": "route_phi4mini",
+      "model_id": "microsoft/Phi-4-mini-instruct",
+      "availability": "ROUTE_UNAVAILABLE",
+      "http_status": 403,
+      "reason": "Current authentication method lacks permission to call Hugging Face Inference Providers on behalf of Hay2045."
+    },
+    {
+      "route_id": "route_mistral7b",
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "availability": "ROUTE_UNAVAILABLE",
+      "http_status": 403,
+      "reason": "Current authentication method lacks permission to call Hugging Face Inference Providers on behalf of Hay2045."
+    }
+  ],
+  "substitution_permitted": false,
+  "batch_started": false,
+  "admission_effect": "HOLD",
+  "required_next_gate": "Acquire an HF credential explicitly authorized for Inference Providers, then rerun the exact same three declared routes without substitution.",
+  "proven_boundary": "HF repository write, private Space/Dataset deployment and live Gradio read access are operational; provider-backed model inference is not yet authorized."
+}
