@@ -1,0 +1,108 @@
+object_id: YH-LW1
+as_of: 2026-09-12
+sources:
+  - id: LW-OFFICIAL-SG
+    type: first_party
+    title: Longevity World Singapore
+    url: https://www.longevity.world/singapore
+    supports:
+      - integrated longevity ecosystem positioning
+      - location
+      - category mix
+  - id: LW-OFFICIAL-ABOUT
+    type: first_party
+    title: Longevity World About and Leasing
+    url: https://www.longevity.world/about
+    supports:
+      - curated tenant mix
+      - leasing strategy
+      - destination positioning
+  - id: MORROW-MEMBERSHIPS
+    type: first_party
+    title: MORROW Memberships
+    url: https://morrow.health/memberships
+    supports:
+      - membership tiers
+      - public prices
+      - facility access structure
+  - id: MORROW-HEALTHSPAN
+    type: first_party
+    title: MORROW Healthspan Plan
+    url: https://morrow.health/plans/healthspan
+    supports:
+      - Prescribe Execute Prove journey
+      - health coach as primary guide
+      - 3-month plan
+      - public price
+  - id: MORROW-PERFORMANCE
+    type: first_party
+    title: MORROW Performance Plan
+    url: https://morrow.health/plans/performance
+    supports:
+      - performance plan design
+      - public price
+      - multidisciplinary model
+  - id: MORROW-METABOLIC
+    type: first_party
+    title: MORROW Weight and Metabolic Plan
+    url: https://morrow.health/plans/weight-and-metabolic
+    supports:
+      - doctor-led metabolic plan
+      - specialist session mix
+      - public price
+  - id: MORROW-INSIGHTS
+    type: first_party
+    title: MORROW Medical Insights
+    url: https://morrowmedical.sg/morrow-insights
+    supports:
+      - assessment components
+      - screening entry products
+      - public prices
+  - id: MORROW-JOURNEY
+    type: first_party
+    title: MORROW Our Journey
+    url: https://morrow.health/our-journey
+    supports:
+      - AI and real-time data role
+      - human care team
+      - community framing
+  - id: SG-ENTITY
+    type: registry_secondary
+    title: Longevity World Singapore entity profile
+    url: https://www.sgpbusiness.com/company/Longevity-World-Singapore
+    supports:
+      - registration date
+      - real-estate principal activity
+  - id: LT-DEMOCRATIZE
+    type: independent_interview
+    title: Longevity World aims to democratize healthspan
+    url: https://longevity.technology/news/longevity-world-aims-to-democratize-healthspan/
+    supports:
+      - Allen Law strategy
+      - Seveno real estate and IP buckets
+      - first phase funding discussion
+  - id: LT-SEVENO
+    type: independent_industry
+    title: Longevity.Technology secures strategic backing from Allen Law
+    url: https://longevity.technology/news/longevity-technology-secures-strategic-backing-from-allen-law/
+    supports:
+      - Seveno portfolio strategy
+      - 80,000 sq ft statement
+      - 156m investment context
+  - id: MORROW-LAUNCH
+    type: company_press_release
+    title: MORROW Targets US$230 Million Annual Revenue as Singapore Flagship Launches
+    url: https://www.prfire.com/news-releases/morrow-targets-us230-million-annual-revenue-as-singapore-flagship-launches/
+    supports:
+      - launch date
+      - 45,000 sq ft flagship
+      - 10+ location plan
+      - US$230m revenue target
+    caution: management target / company claim, not realised audited revenue
+  - id: FT-LONGEVITY-LAB
+    type: independent_media
+    title: Defying death - The longevity lab
+    url: https://www.ft.com/content/65dae18e-7732-43b8-ac75-7f8b6612b4bf
+    supports:
+      - independent longevity-industry critique
+      - evidence-risk context around some modalities
