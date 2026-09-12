@@ -1,0 +1,48 @@
+{
+  "receipt_id": "YH-LAB1-G3-MCP-SMOKE",
+  "observed_at": "2026-09-12T04:36:20Z",
+  "status": "PASS",
+  "job_id": "6aa4d6b221047bf1b037acc6",
+  "space": {
+    "repo_id": "Hay2045/yh-lab1-intelligence-lab",
+    "private": true,
+    "runtime_stage": "RUNNING",
+    "hardware": "cpu-basic",
+    "sha": "199c16b8954e9bdb3fb027590b4e1d62d32ad089"
+  },
+  "required_endpoints": [
+    "/get_eval_summary",
+    "/get_case",
+    "/compare_routes",
+    "/get_admission_status"
+  ],
+  "observed_endpoints": [
+    "/_principals_df",
+    "/compare_routes",
+    "/get_admission_status",
+    "/get_admission_status_1",
+    "/get_admission_status_2",
+    "/get_case",
+    "/get_eval_summary",
+    "/get_eval_summary_1",
+    "/lambda",
+    "/lambda_1"
+  ],
+  "smoke": {
+    "fixture_counts": {
+      "golden": 20,
+      "hard_negative": 20,
+      "synthetic_principal": 10
+    },
+    "routes": [
+      "route_qwen3",
+      "route_phi4mini",
+      "route_mistral7b"
+    ],
+    "eval_run_status": "NOT_RUN",
+    "admission_status": "HOLD",
+    "tested_case_id": "YH-HN-001",
+    "compare_routes_status": "NOT_RUN"
+  },
+  "interpretation": "Live private Gradio read surface is callable and returns typed synthetic-only state. This receipt does not prove three-route inference or Product admission."
+}
